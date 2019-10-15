@@ -12,7 +12,21 @@ Il y aura plusieurs niveaux déjà prédéfinis avec des ennemies, des objets in
 Les personnages (ennemies ou non), les objets mais pas les balles seront soumis à la gravité. 
 
 
-Diferrents livrables:
+Diferrents livrables BORDY:
 
   -livrable 1:
     -creation de la physique de la balle.
+
+BIRGER :
+Editeur de map {
+To do : 
+Evenement cliquer sur l'écran 
+Récupérer les coordonnées
+Instancier un objet à ces coordonnées
+Pouvoir choisir un objet dans une liste et pouvoir le placer à ces coordonnées
+Pouvoir supprimer un objet
+pouvoir modifier plusieurs paramètres(Position, taille, orientation)
+Pouvoir sauvegarder tous ces paramètres dans un fichier (sérialisation)
+et pouvoir les récupérer pour charger la map (désérialisation)
+
+}
