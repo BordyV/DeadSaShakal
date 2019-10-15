@@ -20,7 +20,7 @@ Diferrents livrables BORDY:
 BIRGER :
 Editeur de map {
 To do : 
-Evenement cliquer sur l'écran 
+Evenement cliquer sur l'écran
 Récupérer les coordonnées
 Instancier un objet à ces coordonnées
 Pouvoir choisir un objet dans une liste et pouvoir le placer à ces coordonnées
