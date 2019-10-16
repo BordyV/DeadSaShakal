@@ -17,7 +17,10 @@ Diferrents livrables:
 BORDY:<br>
 
   -livrable 1:<br>
-    -creation de la physique de la balle.
+    -creation de la physique de la balle.<br>
+    a) trajectoire de la balle<br>
+    b) rebond de la balle
+    c) vitesse de la balle
 
 BIRGER :
 Editeur de map {<br>
