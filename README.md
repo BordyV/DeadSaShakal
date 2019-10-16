@@ -18,15 +18,15 @@ Diferrents livrables BORDY:
     -creation de la physique de la balle.
 
 BIRGER :
-Editeur de map {\n
+Editeur de map {<br>
 To do : <br>
-Evenement cliquer sur l'écran
-Récupérer les coordonnées
-Instancier un objet à ces coordonnées
-Pouvoir choisir un objet dans une liste et pouvoir le placer à ces coordonnées
-Pouvoir supprimer un objet
-pouvoir modifier plusieurs paramètres(Position, taille, orientation)
-Pouvoir sauvegarder tous ces paramètres dans un fichier (sérialisation)
-et pouvoir les récupérer pour charger la map (désérialisation)
+Evenement cliquer sur l'écran<br>
+Récupérer les coordonnées<br>
+Instancier un objet à ces coordonnées<br>
+Pouvoir choisir un objet dans une liste et pouvoir le placer à ces coordonnées<br>
+Pouvoir supprimer un objet<br>
+pouvoir modifier plusieurs paramètres(Position, taille, orientation)<br>
+Pouvoir sauvegarder tous ces paramètres dans un fichier (sérialisation)<br>
+et pouvoir les récupérer pour charger la map (désérialisation)<br>
 
 }
