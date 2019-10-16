@@ -14,7 +14,7 @@ Les personnages (ennemies ou non), les objets mais pas les balles seront soumis 
 
 Diferrents livrables BORDY:
 
-  -livrable 1:
+  -livrable 1:<br>
     -creation de la physique de la balle.
 
 BIRGER :
