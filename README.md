@@ -18,8 +18,8 @@ Diferrents livrables BORDY:
     -creation de la physique de la balle.
 
 BIRGER :
-Editeur de map {
-To do : 
+Editeur de map {\n
+To do : <br>
 Evenement cliquer sur l'écran
 Récupérer les coordonnées
 Instancier un objet à ces coordonnées
