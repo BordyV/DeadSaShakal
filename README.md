@@ -19,7 +19,7 @@ BORDY:<br>
   -livrable 1:<br>
     -creation de la physique de la balle.<br>
     a) trajectoire de la balle<br>
-    b) rebond de la balle
+    b) rebond de la balle<br>
     c) vitesse de la balle
 
 BIRGER :
