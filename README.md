@@ -1,5 +1,6 @@
 # Birger
-test buffa
+<BR> Bonjour Monsieur <BR>
+  test buffa
 participants: <br>
 -Mathieu Birger<br>
 -Valentin Bordy<br><br><br>
