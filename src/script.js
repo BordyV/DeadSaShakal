@@ -1,11 +1,11 @@
 var canvas, ctx, width, height;
-var char1;
+var hero1;
 var mousepos = { x: 0, y: 0 };
 var inputStates = {};
 
 window.onload = init;
 
-class Char {
+class Hero {
   constructor(x, y, angle, vitesse,nbBullet, tempsMinEntreTirsEnMillisecondes) {
     this.x = x;
     this.y = y;
@@ -88,10 +88,10 @@ class Char {
 }
 
 class Bullet {
-    constructor(char) {
-        this.x = char.x;
-        this.y = char.y;
-        this.angle = char.angle;
+    constructor(hero) {
+        this.x = hero.x;
+        this.y = hero.y;
+        this.angle = hero.angle;
     }
 
     draw(ctx) {
@@ -118,16 +118,15 @@ function init() {
   
     // dernier param = temps min entre tirs consecutifs. Mettre à 0 pour cadence max
     // 500 = 2 tirs max par seconde, 100 = 10 tirs/seconde
-    char1 = new Char(50, 50, 0, 1,5, 100);
+    hero1 = new Hero(50, 50, 0, 1,5, 100);
 
     canvas.addEventListener('mousemove', function (evt) {
         mousepos = getMousePos(canvas, evt);
     }, false);
 
-    window.addEventListener('click', function (evt) {
+    canvas.addEventListener('click', function (evt) {
         // on passe le temps en parametres, en millisecondes
-        char1.addBullet(Date.now()); 
-      
+        hero1.addBullet(Date.now()); 
         // NOTE : si tu n'utilises pas inputStates.MOUSEDOWN
         // ici, mais juste l'évébement click au lieu de mousedown
         // tu ne pourras pas tirer plus vite, il te faudra
@@ -145,12 +144,12 @@ function anime() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
-    // 2) On dessine et on déplace le char 1
-     char1.draw(ctx);
-     char1.move(mousepos);
+    // 2) On dessine et on déplace la direction du hero 1
+     hero1.draw(ctx);
+     hero1.move(mousepos);
   
     if(inputStates.SPACE) {
-      char1.addBullet(Date.now()); 
+      hero1.addBullet(Date.now()); 
     }
   
     // On demande une nouvelle frame d'animation
