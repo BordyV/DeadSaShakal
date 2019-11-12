@@ -124,10 +124,9 @@ function init() {
         mousepos = getMousePos(canvas, evt);
     }, false);
 
-    window.addEventListener('click', function (evt) {
+    canvas.addEventListener('click', function (evt) {
         // on passe le temps en parametres, en millisecondes
         char1.addBullet(Date.now()); 
-      
         // NOTE : si tu n'utilises pas inputStates.MOUSEDOWN
         // ici, mais juste l'évébement click au lieu de mousedown
         // tu ne pourras pas tirer plus vite, il te faudra
