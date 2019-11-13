@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<link rel="stylesheet" type="text/css" href="style.css"/>
-<script src="script.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script src="js/physique/script.js"></script>
 <title>Bullet</title>
 </head>
 <?php
