@@ -7,7 +7,6 @@
 <title>Bullet</title>
 </head>
 <?php
-echo "test";
 if(isset($_GET['Restart']))
 {
 header("Location: index.php"); 
@@ -17,7 +16,7 @@ exit;}
   <canvas id="myCanvas" width="600" height="400">
   </canvas>
 
-  <form method="get" action="index.html">
+  <form method="get" action="index.php">
   <input class="Restart"
         type="submit" name="Restart">
 </form>
