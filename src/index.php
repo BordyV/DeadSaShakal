@@ -3,7 +3,9 @@
 <head>
 <meta charset=utf-8 />
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<script src="js/model/Object.js"></script>
+<script src="js/model/Objet.js"></script>
+<script src="js/model/Caisse.js"></script>
+<script src="js/model/Mur.js"></script>
 <script src="js/editeur/editeur.js"></script>
 <title>Bullet</title>
 </head>
