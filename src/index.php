@@ -3,8 +3,17 @@
 <head>
 <meta charset=utf-8 />
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<script src="js/physique/script.js"></script>
 <title>Bullet</title>
+
+
+
+<script src="js/init.js"></script>
+<script src="js/physique/script.js"></script>
+<script src="js/physique/mur.js"></script>
+
+
+
+
 </head>
 <?php
 if(isset($_GET['Restart']))
