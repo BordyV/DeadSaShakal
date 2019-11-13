@@ -13,7 +13,7 @@ header("Location: index.php");
 exit;}
 ?>
 <body onload="init();">
-  <canvas id="myCanvas" width="600" height="400">
+  <canvas id="myCanvas" width="1280" height="720">
   </canvas>
 
   <form method="get" action="index.php">
