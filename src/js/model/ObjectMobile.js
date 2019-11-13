@@ -1,0 +1,6 @@
+class ObjectMobile extends Object{
+
+
+
+
+}
