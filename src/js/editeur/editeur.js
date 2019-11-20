@@ -16,8 +16,7 @@ function init() {
     width = canvas.width;
     height = canvas.height;
 
-    // dernier param = temps min entre tirs consecutifs. Mettre à 0 pour cadence max
-    // 500 = 2 tirs max par seconde, 100 = 10 tirs/seconde
+
     objTemp = new Mur(100, 100);
 
     canvas.addEventListener('mousemove', function (evt) {
@@ -89,9 +88,6 @@ function anime() {
         c.draw(ctx);
     });
 
-    if(inputStates) {
-        //char1.addBullet(Date.now());
-    }
 
     // On demande une nouvelle frame d'animation
     window.requestAnimationFrame(anime);
