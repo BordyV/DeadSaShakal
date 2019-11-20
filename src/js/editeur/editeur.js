@@ -50,20 +50,20 @@ function init() {
 
     window.addEventListener('keyup', function(evt) {
        // let key = evt.keyCode;
-        if (evt.keyCode === 97) { // 1
+        if (evt.keyCode === 65) { // 1
             objTemp = new Mur(mousepos.x, mousepos.y);
             objetSelectione = 0;
          //   console.log("Oui"+evt.keyCode);
         }
 
-        if (evt.keyCode === 98) { // 1
+        if (evt.keyCode === 90) { // 1
             objTemp = new Caisse(mousepos.x, mousepos.y);
             objetSelectione = 1;
             //   console.log("Oui"+evt.keyCode);
         }
 
         switch (evt.keyCode) {
-            case 97:
+            case 65:
                 // to do
                 break;
             case 98:
