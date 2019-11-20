@@ -1,7 +1,6 @@
 
-class Bullet extends Hero{
-    constructor() {
-        super()
+class Bullet {
+    constructor(hero) {
         this.x = hero.x;
         this.y = hero.y;
         this.angle = hero.angle;
@@ -11,8 +10,12 @@ class Bullet extends Hero{
       }
 
     draw(ctx) {
+      var image = document.getElementById("source");
+
+      
       ctx.save();        
-        ctx.translate(this.x, this.y);
+      ctx.drawImage(image, this.x, this.y);
+      ctx.translate(this.x, this.y);
         ctx.rotate(this.angle);
         ctx.fillRect(0, 0, 10, 2);
       
