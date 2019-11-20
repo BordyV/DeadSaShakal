@@ -9,7 +9,8 @@
 
 <script src="js/init.js"></script>
 <script src="js/physique/script.js"></script>
-<script src="js/physique/mur.js"></script>
+<script src="js/model/Objet.js"></script>
+<script src="js/model/Mur.js"></script>
 
 
 

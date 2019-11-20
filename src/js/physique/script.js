@@ -36,10 +36,11 @@ class Hero {
     for(let i = 0; i < this.bullets.length; i++) {
       let b = this.bullets[i];
       b.draw(ctx);
-      b.move();
-      if ((b.x < 0) || (b.y < 0) || (b.x > width) || (b.y > height))
-            this.removeBullet(b)
-
+      //if ((b.x < 0) || (b.y < 0) || (b.x > width) || (b.y > height))
+      if (false == b.move())
+      {
+        this.removeBullet(b)
+      }
     }
   }
   
@@ -48,6 +49,7 @@ class Hero {
     let dx = this.x - mousepos.x;
     let dy = this.y - mousepos.y;
     this.angle = Math.atan2(dy, dx);
+    
     
     
   }
@@ -89,7 +91,10 @@ class Bullet {
         this.x = hero.x;
         this.y = hero.y;
         this.angle = hero.angle;
-    }
+        this.nbRebond = 4;
+        this.dx = 10 * Math.cos(this.angle);
+        this.dy = 10 * Math.sin(this.angle);
+      }
 
     draw(ctx) {
       ctx.save();        
@@ -102,9 +107,27 @@ class Bullet {
 
   
     move(maxX, maxY) {
-        this.x -= 10 * Math.cos(this.angle);
-        this.y -= 10 * Math.sin(this.angle);
+      if(this.nbRebond >0)
+      {
+      if(this.x < 10 || this.x > canvas.width -10 )
+      {
+        this.nbRebond -= 1;
+        this.dx *= -1;
+        this.angle *=-1;
+      }
+      if(this.y < 10 || this.y > canvas.height -10)
+      {
+        this.nbRebond -= 1;
+        this.dy *= -1;
+        this.angle *= -1;
+        
+      }
+        this.x -= this.dx;
+        this.y -= this.dy;
+        return true;
     }
+    return false;
+  }
 }
 
 
