@@ -9,6 +9,8 @@
 
 <script src="js/init.js"></script>
 <script src="js/physique/script.js"></script>
+<!-- JS MODEL -->
+<script src="js/model/Hero.js"></script>
 <script src="js/model/Objet.js"></script>
 <script src="js/model/Mur.js"></script>
 
