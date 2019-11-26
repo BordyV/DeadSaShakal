@@ -10,14 +10,14 @@ class Bullet {
       }
 
     draw(ctx) {
-      var image = document.getElementById("source");
-
+     
       
       ctx.save();        
-      ctx.drawImage(image, this.x, this.y);
+      var image = document.getElementById("source");
       ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
-        ctx.fillRect(0, 0, 10, 2);
+      ctx.rotate(this.angle *Math.PI/2);
+      ctx.translate(-this.width, -this.height);
+      ctx.drawImage(image, 0, 0);
       
       ctx.restore();
     }
