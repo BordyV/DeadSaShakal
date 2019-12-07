@@ -10,7 +10,7 @@ class Hero {
       // cadenceTir en millisecondes = temps min entre tirs
       this.delayMinBetweenBullets = tempsMinEntreTirsEnMillisecondes;
 
-      this.corps = document.getElementById("mechant");
+      this.corps = document.getElementById("hero");
       this.arme = document.getElementById("arme");
     }
     

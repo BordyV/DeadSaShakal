@@ -31,6 +31,7 @@ exit;}
   </canvas>
   <div style="display:none;">
   <img id="bullet" src="img/b.svg">
+  <img id="hero" src="img/hero.svg">
   <img id="mechant" src="img/mechant.svg">
   <img id="arme" src="img/arme.svg">
   <img id="background1" src="img/background1.svg">
