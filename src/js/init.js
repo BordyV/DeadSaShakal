@@ -13,7 +13,7 @@ function init() {
     // dernier param = temps min entre tirs consecutifs. Mettre à 0 pour cadence max
     // 500 = 2 tirs max par seconde, 100 = 10 tirs/seconde
     hero1 = new Hero(100, 100, 0, 1,5, 100);
-
+    mechant1 = new Mechant(150, 150);
     canvas.addEventListener('mousemove', function (evt) {
         mousepos = getMousePos(canvas, evt);
     }, false);
