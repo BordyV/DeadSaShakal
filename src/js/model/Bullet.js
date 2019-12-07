@@ -45,6 +45,7 @@ class Bullet {
         this.y -= this.dy;
         return true;
     }
+    
     return false;
   }
 }
