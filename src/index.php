@@ -32,6 +32,7 @@ exit;}
   <div style="display:none;">
   <img id="bullet" src="img/b.svg">
   <img id="mechant" src="img/mechant.svg">
+  <img id="arme" src="img/arme.svg">
   <img id="background1" src="img/background1.svg">
   <!-- <img id="bullet" width="10px" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"> -->
 </div>

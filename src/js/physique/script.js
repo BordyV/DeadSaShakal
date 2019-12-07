@@ -10,7 +10,13 @@ function anime() {
      hero1.draw(ctx);
      hero1.move(mousepos);
      mechant1.draw(ctx);
-  
+    mur1.draw(ctx);
+     for(let i = 0; i < lesMurs.length; i++) {
+        let lemur = lesMurs[i];
+        lemur.draw(ctx);
+      }
+
+
     if(inputStates.SPACE) {
       hero1.addBullet(Date.now()); 
     }

@@ -9,18 +9,29 @@ class Hero {
       this.soldeBullet = nbBullet;
       // cadenceTir en millisecondes = temps min entre tirs
       this.delayMinBetweenBullets = tempsMinEntreTirsEnMillisecondes;
+
+      this.corps = document.getElementById("mechant");
+      this.arme = document.getElementById("arme");
     }
     
     draw(ctx) {
       ctx.save();
       ctx.translate(this.x, this.y);
-      ctx.rotate(this.angle);
+      // ctx.rotate(this.angle);
+     
+
+      
       ctx.translate(-10, -10);
       
       // corps
-      ctx.fillRect(0, 0, 20, 20);
+      ctx.drawImage(this.corps, 0, 0);
+      // ctx.fillRect(0, 0, 20, 20);
+      
       // canon
-      ctx.fillRect(-10, 9, 10, 2);
+      ctx.translate(this.x/1.5, this.y-20);
+      ctx.rotate(this.angle);
+      ctx.drawImage(this.arme, -50, -0);
+      // ctx.fillRect(-10, 9, 10, 2);
       
       ctx.restore();
       
@@ -41,9 +52,9 @@ class Hero {
     }
     
     move(mousepos) {
-          // 2) On dÃ©place la balle 
-      let dx = this.x - mousepos.x;
-      let dy = this.y - mousepos.y;
+          // 2) On deplace la balle 
+      let dx = this.corps.height + 50 - mousepos.x;
+      let dy = this.corps.width +75 - mousepos.y;
       this.angle = Math.atan2(dy, dx);
       
       

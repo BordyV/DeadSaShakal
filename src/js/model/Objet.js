@@ -4,8 +4,6 @@ class Objet {
       this.x = x;
       this.y = y;
       this.roation = 0;
-      this.tailleX =1;
-      this.tailleY=1;
   }
 
   move(mousepos) {
