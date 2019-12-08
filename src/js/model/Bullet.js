@@ -4,7 +4,7 @@ class Bullet {
         this.x = hero.x*2;
         this.y = hero.y*1.5;
         this.angle = hero.angle;
-        this.nbRebond = 4;
+        this.nbRebond = 9;
         this.dx = 10 * Math.cos(this.angle);
         this.dy = 10 * Math.sin(this.angle);
       }
