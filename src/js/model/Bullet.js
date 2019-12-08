@@ -78,10 +78,10 @@ class Bullet {
   }
 
   testerCollisionX(mur) {
-    if ( !(this.x > mur.x + mur.width
-         || this.x < mur.x
-         || this.y > mur.y + mur.height
-         || this.y < mur.y) ) {
+    if ( !(this.x > mur.getRight()
+         || this.x < mur.getLeft()
+         || this.y > mur.getBottom()
+         || this.y < mur.getTop()) ) {
            return true;
     } 
     else {
