@@ -17,10 +17,10 @@ class Mur extends Objet{
       ctx.restore();
   }
   
-  getBottom() { return this.y + this.height; }
-  getLeft() { return this.x; }
-  getRight() { return this.x + this.width; }
-  getTop() { return this.y; }
+  getLeft() { return this.y + this.height; }
+  getTop() { return this.x + this.width; }
+  getBottom() { return this.x + this.width ; }
+  getRight() { return this.y + this.height; }
 
 
 
