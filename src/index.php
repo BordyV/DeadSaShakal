@@ -3,6 +3,7 @@
 <head>
 <meta charset=utf-8 />
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
 <title>Bullet</title>
 
 
@@ -17,6 +18,10 @@
 <script src="js/model/Mur.js"></script>
 <script src="js/model/Plateforme.js"></script>
 
+  <!-- editeur -->
+
+<script src="js/model/Caisse.js"></script>
+<script src="js/editeur/editeur.js"></script>
 
 
 
@@ -24,7 +29,7 @@
 <?php
 if(isset($_GET['Restart']))
 {
-header("Location: index.php"); 
+header("Location: index.php");
 exit;}
 ?>
 <body onload="init();">

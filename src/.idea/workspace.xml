@@ -23,6 +23,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -47,6 +48,9 @@
       <option name="presentableId" value="Default" />
       <updated>1573632181659</updated>
       <workItem from="1573632183086" duration="553000" />
+      <workItem from="1573635204088" duration="16963000" />
+      <workItem from="1573739521989" duration="3971000" />
+      <workItem from="1574243021152" duration="292000" />
     </task>
     <servers />
   </component>
@@ -58,7 +62,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
