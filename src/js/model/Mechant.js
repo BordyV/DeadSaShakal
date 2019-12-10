@@ -3,13 +3,16 @@ class Mechant {
         this.x = x;
         this.y = y;
         this.vivant=1;
+        this.image = document.getElementById("mechant");  
+        this.height =this.image.height;
+        this.width = this.image.width;
+
         }
 
     draw(ctx) {
       ctx.save();        
-      var image = document.getElementById("mechant");
       ctx.translate(this.x, this.y);
-      ctx.drawImage(image, 0, 0);
+      ctx.drawImage(this.image, 0, 0);
       ctx.restore();
     }
     mort(ctx)
