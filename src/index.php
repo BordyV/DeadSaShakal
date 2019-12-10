@@ -35,6 +35,7 @@ exit;}
   <img id="mechant" src="img/mechant.svg">
   <img id="arme" src="img/arme.svg">
   <img id="background1" src="img/background1.svg">
+  <img id="mur1" src="img/mur1.svg">
   <!-- <img id="bullet" width="10px" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"> -->
 </div>
   <form method="get" action="index.php">

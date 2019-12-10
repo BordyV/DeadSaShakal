@@ -29,12 +29,14 @@ class Bullet {
 
     if(this.nbRebond >0)
     {
-      if(this.testerCollision(mur1))
+      lesMurs.forEach(m => {
+        
+      if(this.testerCollision(m))
           {
-            this.GetMurCollision(mur1);            
+            this.GetMurCollision(m);            
       }
         
-        
+    }); 
         if(this.testerCollisionMechant(mechant1))
         {
 
