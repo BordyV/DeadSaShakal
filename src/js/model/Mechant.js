@@ -15,6 +15,5 @@ class Mechant {
     mort(ctx)
     {
       this.vivant=0;
-      console.log("test");
     }
 }

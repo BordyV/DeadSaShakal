@@ -31,39 +31,8 @@ class Bullet {
     {
       if(this.testerCollision(mur1))
           {
-            console.log(mur1.x - this.dx , this.x , mur1.x +this.dx , this.x);
-            console.log(this.dx);
-            console.log(mur1.x);
-
-            if(mur1.x - Math.abs(this.dx) < this.x && mur1.x +Math.abs(this.dx) > this.x )
-            {
-                
-              this.nbRebond -= 1;
-          this.dx *= -1;
-          this.angle *= -1;
-            }
-            if(mur1.y - Math.abs(this.dy) < this.y && mur1.y +Math.abs(this.dy) > this.y )
-            {
-              this.nbRebond -= 1;
-          this.dy *= -1;
-          this.angle *= -1;
-            }
-
-            if(mur1.x+mur1.width - Math.abs(this.dx) < this.x && mur1.x+mur1.width +Math.abs(this.dx) > this.x )
-            {
-                
-              this.nbRebond -= 1;
-          this.dx *= -1;
-          this.angle *= -1;
-            }
-            if(mur1.y+ mur1.height - Math.abs(this.dy) < this.y && mur1.y+ mur1.height +Math.abs(this.dy) > this.y )
-            {
-              this.nbRebond -= 1;
-          this.dy *= -1;
-          this.angle *= -1;
-            }
-            
-        }
+            this.GetMurCollision(mur1);            
+      }
         
         
         if(this.testerCollisionMechant(mechant1))
@@ -94,75 +63,50 @@ class Bullet {
     return false;
   }
   
- 
   testerCollision(mur) {
     if (((this.x < mur.x + mur.width
          && this.x > mur.x)) ) {
           if (((this.y < mur.y + mur.height
             && this.y > mur.y)))
             {
-              console.log("testzzzz");
            return true;
               
           }
     } 
       return false;
   }
+  GetMurCollision(mur){
 
-  testerCollisionX(mur) {
-    if (((this.x < mur.x + mur.width
-         && this.x > mur.x)) ) {
-          if (((this.y < mur.y + mur.height
-            && this.y > mur.y)))
+    if(mur.x - Math.abs(this.dx) < this.x && mur.x +Math.abs(this.dx) > this.x )
             {
-              
-           return true;
-              
-          }
-    } 
-      return false;
-  }
-  testerCollisionY(mur) {
-    if (((this.y < mur.y + mur.height
-         && this.y > mur.y)) ) {
-          if (((this.x < mur.x + mur.width
-            && this.x > mur.x)) )
-            {
-              if (((this.x < mur.x + mur.width
-                && this.x > mur.x) < this.x) )
-                {
-
-                   return true;
-                }
+              console.log("left");
+              this.nbRebond -= 1;
+              this.dx *= -1;
+              this.angle *= -1;
             }
-    } 
-      return false;
+            if(mur.y - Math.abs(this.dy) < this.y && mur.y +Math.abs(this.dy) > this.y )
+            {
+              console.log("top");
+              this.nbRebond -= 1;
+              this.dy *= -1;
+              this.angle *= -1;
+            }
+
+            if(mur.x+mur.width - Math.abs(this.dx) < this.x && mur.x+mur.width +Math.abs(this.dx) > this.x )
+            {
+              console.log("right");
+              this.nbRebond -= 1;
+              this.dx *= -1;
+              this.angle *= -1;
+            }
+            if(mur.y+ mur.height - Math.abs(this.dy) < this.y && mur.y+ mur.height +Math.abs(this.dy) > this.y )
+            {
+              console.log("bot");
+              this.nbRebond -= 1;
+              this.dy *= -1;
+              this.angle *= -1;
+            }
   }
-
-//   testerCollisionX(mur) {
-//     var dist = 10;
-
-//     if ( (this.x < mur.getLeft()+dist &&  this.x > mur.getLeft()-dist) ||  (this.x < mur.getRight()+dist &&  this.x > mur.getRight()-dist))
-//   if ((this.x > mur.getLeft() && this.x < mur.getRight()) && (this.y > mur.getTop() && this.y < mur.getBottom()))  {
-
-//          return true;
-//   }
-
-//   else {
-//     return false;
-//   }
-// }
-// //Test colliosion en Y
-// testerCollisionY(mur) {
-//     var dist = 10;
-//     if ( (this.y < mur.getTop()+dist &&  this.y > mur.getTop()-dist) ||  (this.y < mur.getBottom()+dist &&  this.y > mur.getBottom()-dist))
-//   if ( (this.x > mur.getLeft() && this.x < mur.getRight()) && (this.y > mur.getTop() && this.y < mur.getBottom())) {
-//          return true;
-//   } 
-//   else {
-//     return false;
-//   }
-// }
 
   testerCollisionMechant(mechant) {
     if ( !(this.x > mechant.x + mechant.width
