@@ -64,9 +64,9 @@ class Bullet {
   }
   
   testerCollision(mur) {
-    if (((this.x < mur.x + mur.width
+    if (((this.x < mur.x + mur.height
          && this.x > mur.x)) ) {
-          if (((this.y < mur.y + mur.height
+          if (((this.y < mur.y + mur.width
             && this.y > mur.y)))
             {
            return true;
