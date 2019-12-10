@@ -15,6 +15,7 @@
 <script src="js/model/Bullet.js"></script>
 <script src="js/model/Mechant.js"></script>
 <script src="js/model/Mur.js"></script>
+<script src="js/model/Plateforme.js"></script>
 
 
 
@@ -36,6 +37,9 @@ exit;}
   <img id="arme" src="img/arme.svg">
   <img id="background1" src="img/background1.svg">
   <img id="mur1" src="img/mur1.svg">
+  <img id="mur2" src="img/mur2.svg">
+
+  <img id="plateforme" src="img/plateforme.svg">
   <!-- <img id="bullet" width="10px" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"> -->
 </div>
   <form method="get" action="index.php">

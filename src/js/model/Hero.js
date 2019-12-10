@@ -12,6 +12,8 @@ class Hero {
 
       this.corps = document.getElementById("hero");
       this.arme = document.getElementById("arme");
+      this.height =this.corps.height;
+      this.width =this.corps.width;
     }
     
     draw(ctx) {
@@ -41,7 +43,7 @@ class Hero {
     
     drawBullets(ctx) {
       for(let i = 0; i < this.bullets.length; i++) {
-        let b = this.bullets[i];
+        let b = this.bullets[i]; 
         b.draw(ctx);
         //if ((b.x < 0) || (b.y < 0) || (b.x > width) || (b.y > height))
         if (false == b.move())

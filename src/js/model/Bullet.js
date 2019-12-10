@@ -5,8 +5,8 @@ class Bullet {
         this.y = hero.y*1.5;
         this.angle = hero.angle;
         this.nbRebond = 9;
-        this.dx = 10 * Math.cos(this.angle);
-        this.dy = 10 * Math.sin(this.angle);
+        this.dx = 20 * Math.cos(this.angle);
+        this.dy = 20 * Math.sin(this.angle);
       }
 
     draw(ctx) {
@@ -66,9 +66,9 @@ class Bullet {
   }
   
   testerCollision(mur) {
-    if (((this.x < mur.x + mur.height
+    if (((this.x < mur.x + mur.width
          && this.x > mur.x)) ) {
-          if (((this.y < mur.y + mur.width
+          if (((this.y < mur.y + mur.height
             && this.y > mur.y)))
             {
            return true;

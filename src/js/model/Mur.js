@@ -1,9 +1,22 @@
 class Mur extends Objet{
 
-  constructor(x,y, height, width) {
+  constructor(id, x,y, height, width) {
     super(x,y);
+    this.id=id;
+    if(this.id == 1)
+    {
     this.image = document.getElementById("mur1");
+    }
+    else if (this.id ==2)
+    {
+      this.image = document.getElementById("mur2");
 
+    }
+    else if (this.id ==3)
+    {
+      this.image = document.getElementById("plateforme");
+
+    }
     this.height =this.image.height;
     this.width = this.image.width;
 
@@ -24,12 +37,4 @@ class Mur extends Objet{
 
       ctx.restore();
   }
-  
-  getLeft() { return this.y + this.height; }
-  getTop() { return this.x + this.width; }
-  getBottom() { return this.x + this.width ; }
-  getRight() { return this.y + this.height; }
-
-
-
 }
