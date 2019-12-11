@@ -3,25 +3,39 @@ var hero1;
 var mousepos = { x: 0, y: 0 };
 var inputStates = {};
 const lesMurs = [];
-
-
+var map =[];
+var mechants = [];
+var mapload;
+var mechant1
 function init() {
     canvas = document.querySelector("#myCanvas");
     ctx = canvas.getContext('2d');
     width = canvas.width;
     height = canvas.height;
-  
 
+    mapLoad = map2;
+    map =[];
+    for (i in mapLoad)
+    {
+        if (mapLoad[i].id === 101 || mapLoad[i].id === 102 )
+        {
+            map.push(new Mur(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height, mapLoad[i].width));
+            lesMurs.push(new Mur(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height, mapLoad[i].width));
+        }
+        if (mapLoad[i].id === 1)
+        {
+            hero1 = new Hero(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y,mapLoad[i].angle,mapLoad[i].v,mapLoad[i].nbBullet,mapLoad[i].delayMinBetweenBullets, mapLoad[i].height, mapLoad[i].width);
+        }
+        if (mapLoad[i].id === 2)
+        {
+            map.push(new Mechant(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height,mapLoad[i].width));
+             mechant1 = new Mechant(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height,mapLoad[i].width);
+        }
+
+    }
     // dernier param = temps min entre tirs consecutifs. Mettre à 0 pour cadence max
     // 500 = 2 tirs max par seconde, 100 = 10 tirs/seconde
-    hero1 = new Hero(1, 100, 100, 0, 1,5, 100, 50, 50);
-    mechant1 = new Mechant(2, canvas.width - 150, canvas.height - 150, 50, 50);
-    lesMurs.push(new Mur(102,hero1.width/2,hero1.height*2 -21 , 150, 250));
-    lesMurs.push(new Mur(101,364.8000030517578, 32.40000009536743, 100, 776));
-    lesMurs.push(new Mur(101,1155.8000030517578, 138.40000009536743, 346, 100));
-    lesMurs.push(new Mur(101,784.8000030517578, 378.8000030517578, 103, 353));
-    lesMurs.push(new Mur(101,476.8000030517578, 502.79999923706055, 218, 100));
-    lesMurs.push(new Mur(101,492.8000030517578, 704.8000030517578, 100, 800));
+
 
     
 

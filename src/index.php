@@ -7,7 +7,7 @@
 <title>Bullet</title>
 
 
-
+<script src="map/map2.json"></script>
 <script src="js/init.js"></script>
 <script src="js/physique/script.js"></script>
 <!-- JS MODEL -->
@@ -20,7 +20,7 @@
   <!--
 <script src="js/physique/Editeur.js"></script>
 <script src="js/model/Caisse.js"></script>
-<script src="map/map2.json" ></script>
+
 -->
 
 

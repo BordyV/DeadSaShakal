@@ -11,14 +11,9 @@ function anime() {
     // 2) On dessine et on déplace la direction du hero 1
      hero1.draw(ctx);
      hero1.moveM(mousepos);
-     if(mechant1.vivant == 1)
-     {
-     mechant1.draw(ctx);
-     }
-     for(let i = 0; i < lesMurs.length; i++) {
-        let lemur = lesMurs[i];
-        lemur.draw(ctx);
-      }
+    map.map(c => {
+        c.draw(ctx);
+    });
       
 
     if(inputStates.SPACE) {
