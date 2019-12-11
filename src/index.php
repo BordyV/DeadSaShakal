@@ -20,6 +20,7 @@
   <!--
 <script src="js/physique/Editeur.js"></script>
 <script src="js/model/Caisse.js"></script>
+<script src="map/map2.json" ></script>
 -->
 
 

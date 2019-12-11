@@ -77,6 +77,8 @@
 <script src="js/model/Mechant.js"></script>
 <script src="js/model/Mur.js"></script>
 <script src="js/model/Plateforme.js"></script>
+<script src="map/map.json" ></script>
+<script src="map/map2.json" ></script>
 
   <!-- editeur -->
 

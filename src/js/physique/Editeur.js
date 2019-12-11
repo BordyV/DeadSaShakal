@@ -10,6 +10,7 @@ var inputStates = {};
 var touche;
 let sliderY;
 let sliderX;
+var mapLoad;
 
 window.onloadend = Loii();
 
@@ -73,6 +74,7 @@ function init() {
             objTemp= new Mur(101, mousepos.x,mousepos.y,100,100);
             objetSelectione =101;
             console.log("objet: " + mapTemp);
+            
         }
 
        else if(evt.button ===2)
@@ -128,6 +130,34 @@ function init() {
             objTemp = new Mechant(2,mousepos.x,mousepos.y);
             objetSelectione = 2;
             //   console.log("Oui"+evt.keyCode);
+        }
+        if (evt.keyCode === 88) {
+            download(JSON.stringify(mapTemp), 'map.json', 'text/plain');
+        }
+
+        if (evt.keyCode === 87) {
+
+            //
+
+
+            mapLoad = map2;
+            mapTemp =[];
+            for (i in mapLoad)
+            {
+                if (mapLoad[i].id === 101 || mapLoad[i].id === 102 )
+                {
+                    mapTemp.push(new Mur(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height, mapLoad[i].width));
+                }
+                if (mapLoad[i].id === 1)
+                {
+                    mapTemp.push(new Hero(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y,mapLoad[i].angle,mapLoad[i].v,mapLoad[i].nbBullet,mapLoad[i].delayMinBetweenBullets, mapLoad[i].height, mapLoad[i].width));
+                }
+                if (mapLoad[i].id === 2)
+                {
+                    mapTemp.push(new Mechant(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height,mapLoad[i].width));
+                }
+
+                    }
         }
 
         switch (evt.keyCode) {
@@ -212,4 +242,12 @@ function ModifTaille(mur) {
         mur.width = sliderX.value;
     }
 }
+function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
+
 
