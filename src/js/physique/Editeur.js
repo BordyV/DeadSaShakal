@@ -4,7 +4,7 @@ let objets=[];
 let mapTemp =[];
 let object = new Object(0,0,0);
 let objet = {x:0, y:0, orientation :0, tailleX : 1, tailleY : 1, id : 1};
-let objetSelectione = 1;
+let objetSelectione = 101;
 var mousepos = { x: 0, y: 0 };
 var inputStates = {};
 var touche;
@@ -27,7 +27,7 @@ function init() {
     sliderY = document.getElementById("sliderY");
     sliderX = document.getElementById("sliderX");
 
-    objTemp = new Mur(1, 100,100,100,100);
+    objTemp = new Mur(101, 100,100,100,100);
 
     canvas.addEventListener('mousemove', function (evt) {
         mousepos = getMousePos(canvas, evt);
@@ -61,21 +61,21 @@ function init() {
                 touche = true;
             if(!touche)
             switch (objetSelectione) {
+                case 101:
+                    mapTemp.push(new Mur(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
+                    break;
+                case 102:
+                    mapTemp.push(new Mur(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
+                    break;
                 case 1:
-                    mapTemp.push(new Mur(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
-                    break;
-                case 2:
-                    mapTemp.push(new Mur(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
-                    break;
-                case 3:
                     mapTemp.push(new Hero(objTemp.x, objTemp.y,objTemp.angle,objTemp.v,objTemp.nbBullet,objTemp.delayMinBetweenBullets));
-                case 4:
+                case 2:
                     mapTemp.push(new Mechant(objTemp.x, objTemp.y));
 
 
             }
-            objTemp= new Mur(1, mousepos.x,mousepos.y,100,100);
-            objetSelectione =1;
+            objTemp= new Mur(101, mousepos.x,mousepos.y,100,100);
+            objetSelectione =101;
             console.log("objet: " + mapTemp);
         }
 
@@ -113,24 +113,24 @@ function init() {
         // let key = evt.keyCode;
 
         if (evt.keyCode === 97) { // 1
-            objTemp = new Mur(1, mousepos.x,mousepos.y,100,100);
-            objetSelectione = 1;
+            objTemp = new Mur(101, mousepos.x,mousepos.y,100,100);
+            objetSelectione = 101;
 
         }
 
         if (evt.keyCode === 98) { // 1
-            objTemp = new Mur(2, mousepos.x,mousepos.y,100,100);
-            objetSelectione = 2;
+            objTemp = new Mur(102, mousepos.x,mousepos.y,100,100);
+            objetSelectione = 102;
             //   console.log("Oui"+evt.keyCode);
         }
         if (evt.keyCode === 99) { // 1
             objTemp = new Hero(mousepos.x,mousepos.y,0,1,5,100);
-            objetSelectione = 3;
+            objetSelectione = 1;
             //   console.log("Oui"+evt.keyCode);
         }
         if (evt.keyCode === 100) { // 1
             objTemp = new Mechant(mousepos.x,mousepos.y);
-            objetSelectione = 4;
+            objetSelectione = 2;
             //   console.log("Oui"+evt.keyCode);
         }
 
