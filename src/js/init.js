@@ -16,8 +16,15 @@ function init() {
     // 500 = 2 tirs max par seconde, 100 = 10 tirs/seconde
     hero1 = new Hero(1, 100, 100, 0, 1,5, 100, 50, 50);
     mechant1 = new Mechant(2, canvas.width - 150, canvas.height - 150, 50, 50);
-    lesMurs.push(new Mur(102,500,500, 100, 100));
-    lesMurs.push(new Mur(101,800,400, 150, 250));
+    lesMurs.push(new Mur(102,hero1.width/2,hero1.height*2 -21 , 150, 250));
+    lesMurs.push(new Mur(101,364.8000030517578, 32.40000009536743, 100, 776));
+    lesMurs.push(new Mur(101,1155.8000030517578, 138.40000009536743, 346, 100));
+    lesMurs.push(new Mur(101,784.8000030517578, 378.8000030517578, 103, 353));
+    lesMurs.push(new Mur(101,476.8000030517578, 502.79999923706055, 218, 100));
+
+
+
+
 
     canvas.addEventListener('mousemove', function (evt) {
         mousepos = getMousePos(canvas, evt);
