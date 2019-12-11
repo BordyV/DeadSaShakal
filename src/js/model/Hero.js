@@ -20,8 +20,8 @@ class Hero extends Objet {
       this.height =this.corps.height;
       this.width =this.corps.width;
 
-      this.armeX = this.arme.height/2;
-      this.armeY = this.arme.width/2;
+      this.armeX = this.x +this.width;
+      this.armeY = this.y+this.height/2;
     }
     
     draw(ctx) {
@@ -33,9 +33,10 @@ class Hero extends Objet {
       // corps
       ctx.drawImage(this.corps, 0, 0);
       // ctx.fillRect(0, 0, 20, 20);
-      
       // canon
-      ctx.translate(this.x- this.armeX-20 , this.y-this.armeY+5);
+      
+      ctx.translate(70, 80);
+      
       ctx.rotate(this.angle);
       ctx.drawImage(this.arme, -50, -0);      
       ctx.restore();
