@@ -8,7 +8,13 @@ class Mechant {
         this.width = this.image.width;
 
         }
+    move(mousepos) {
+        let dx = this.x - mousepos.x;
+        let dy = this.y - mousepos.y;
+        this.x -=  dx;
+        this.y -=  dy;
 
+    }
     draw(ctx) {
       ctx.save();        
       ctx.translate(this.x, this.y);

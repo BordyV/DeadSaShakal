@@ -68,10 +68,14 @@ function init() {
                     mapTemp.push(new Mur(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
                     break;
                 case 3:
-                    mapTemp.push(new Hero(objTemp.x, objTemp.y))
+                    mapTemp.push(new Hero(objTemp.x, objTemp.y,objTemp.angle,objTemp.v,objTemp.nbBullet,objTemp.delayMinBetweenBullets));
+                case 4:
+                    mapTemp.push(new Mechant(objTemp.x, objTemp.y));
+
 
             }
             objTemp= new Mur(1, mousepos.x,mousepos.y,100,100);
+            objetSelectione =1;
             console.log("objet: " + mapTemp);
         }
 
@@ -122,6 +126,11 @@ function init() {
         if (evt.keyCode === 99) { // 1
             objTemp = new Hero(mousepos.x,mousepos.y,0,1,5,100);
             objetSelectione = 3;
+            //   console.log("Oui"+evt.keyCode);
+        }
+        if (evt.keyCode === 100) { // 1
+            objTemp = new Mechant(mousepos.x,mousepos.y);
+            objetSelectione = 4;
             //   console.log("Oui"+evt.keyCode);
         }
 

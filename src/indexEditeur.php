@@ -110,10 +110,10 @@ exit;}
 </div>
 
 <div class="slidecontainer" style="position:relative; left:1200px; top:-200px;">
-  <input type="range" min="1" max="400" value="50" class="slider" id="sliderY">
+  <input type="range" min="1" max="800" value="50" class="slider" id="sliderY">
 </div>
 <div class="slidecontainer" style="position:relative; left:200px; top:100px;">
-  <input type="range" min="1" max="400" value="50" class="sliderX" id="sliderX">
+  <input type="range" min="1" max="800" value="50" class="sliderX" id="sliderX">
 </div>
 
   <form method="get" action="index.php">
