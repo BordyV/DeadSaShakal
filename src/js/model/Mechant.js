@@ -1,7 +1,7 @@
-class Mechant {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
+class Mechant extends Objet {
+    constructor(id, x, y, height, width) {
+      super(id, x, y, height, width);
+       this.id = id;
         this.vivant=1;
         this.image = document.getElementById("mechant");  
         this.height =this.image.height;
