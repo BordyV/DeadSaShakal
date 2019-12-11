@@ -18,7 +18,6 @@ function init() {
     mechant1 = new Mechant(canvas.width - 150, canvas.height - 150);
     lesMurs.push(new Mur(1,500,500, 50, 50));
     lesMurs.push(new Mur(2,800,400, 200, 100));
-    lesMurs.push(new Mur(3,hero1.x - hero1.width,hero1.y + hero1.height, 0,0));
     console.log(lesMurs[2].width);
 
     canvas.addEventListener('mousemove', function (evt) {
