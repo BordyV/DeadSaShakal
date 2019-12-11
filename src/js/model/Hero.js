@@ -49,14 +49,14 @@ class Hero extends Objet {
         let b = this.bullets[i]; 
         b.draw(ctx);
         //if ((b.x < 0) || (b.y < 0) || (b.x > width) || (b.y > height))
-        if (false == b.move())
+        if (false == b.moveM())
         {
           this.removeBullet(b)
         }
       }
     }
     
-    move(mousepos) {
+    moveM(mousepos) {
           // 2) On deplace la balle 
       let dx = this.corps.height - mousepos.x;
       let dy = this.corps.width +75 - mousepos.y;
