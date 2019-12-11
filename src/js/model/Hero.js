@@ -19,6 +19,9 @@ class Hero extends Objet {
       this.arme = document.getElementById("arme");
       this.height =this.corps.height;
       this.width =this.corps.width;
+
+      this.armeX = this.arme.height/2;
+      this.armeY = this.arme.width/2;
     }
     
     draw(ctx) {
@@ -26,20 +29,15 @@ class Hero extends Objet {
       ctx.translate(this.x, this.y);
       // ctx.rotate(this.angle);
      
-
-      
-      ctx.translate(-10, -10);
       
       // corps
       ctx.drawImage(this.corps, 0, 0);
       // ctx.fillRect(0, 0, 20, 20);
       
       // canon
-      ctx.translate(this.x/1.5, this.y-20);
+      ctx.translate(this.x- this.armeX-20 , this.y-this.armeY+5);
       ctx.rotate(this.angle);
-      ctx.drawImage(this.arme, -50, -0);
-      // ctx.fillRect(-10, 9, 10, 2);
-      
+      ctx.drawImage(this.arme, -50, -0);      
       ctx.restore();
       
       this.drawBullets(ctx);
@@ -60,7 +58,7 @@ class Hero extends Objet {
     
     move(mousepos) {
           // 2) On deplace la balle 
-      let dx = this.corps.height + 50 - mousepos.x;
+      let dx = this.corps.height - mousepos.x;
       let dy = this.corps.width +75 - mousepos.y;
       this.angle = Math.atan2(dy, dx);
 
