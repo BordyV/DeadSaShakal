@@ -22,6 +22,8 @@ class Hero extends Objet {
 
       this.armeX = this.x +this.width;
       this.armeY = this.y+this.height/2;
+      this.armeWidth = this.arme.width;
+      this.armeHeight = this.arme.height;
     }
     
     draw(ctx) {
@@ -59,8 +61,8 @@ class Hero extends Objet {
     
     moveM(mousepos) {
           // 2) On deplace la balle 
-      let dx = this.corps.height - mousepos.x;
-      let dy = this.corps.width +75 - mousepos.y;
+      let dx = this.armeX - mousepos.x;
+      let dy = this.armeY - mousepos.y;
       this.angle = Math.atan2(dy, dx);
 
     }

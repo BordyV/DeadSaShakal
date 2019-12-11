@@ -1,12 +1,14 @@
 
 class Bullet {
     constructor(hero) {
-        this.x = hero.x*2;
-        this.y = hero.y*1.5;
+        this.x = hero.armeX + hero.armeWidth;
+        this.y = hero.armeY + hero.armeHeight;
         this.angle = hero.angle;
         this.nbRebond = 9;
         this.dx = 20 * Math.cos(this.angle);
         this.dy = 20 * Math.sin(this.angle);
+        this.depBulletX = hero.armeX;
+        this.depBulletY = hero.armeY;
       }
 
     draw(ctx) {
@@ -17,7 +19,7 @@ class Bullet {
       //ctx.rotate(this.angle-(Math.PI/2));
       ctx.rotate(this.angle);
 
-      ctx.translate(-this.width, -this.height);
+     // ctx.translate(-this.width, -this.height);
       //ctx.drawImage(image, 0, 0);
       ctx.fillRect(0, 0, 20, 5);
       ctx.restore();
@@ -43,20 +45,19 @@ class Bullet {
           mechant1.mort(ctx);
         }
 
-      if(this.x < 10 || this.x > canvas.width -10)
-      {
-        this.nbRebond -= 1;
-        this.dx *= -1;
-        this.angle *= -1;
-        ///ctx.rotate(thi.angle* this.angle-1)
-      }
-      if(this.y < 10 || this.y > canvas.height -10 )
-      {
-        this.nbRebond -= 1;
-        this.dy *= -1;
-        this;this.angle *= -1;
+      // if(this.x < 10 || this.x > canvas.width -10)
+      // {
+      //   this.nbRebond -= 1;
+      //   this.dx *= -1;
+      //   this.angle *= -1;
+      // }
+      // if(this.y < 10 || this.y > canvas.height -10 )
+      // {
+      //   this.nbRebond -= 1;
+      //   this.dy *= -1;
+      //   this;this.angle *= -1;
         
-      }
+      // }
 
         this.x -= this.dx;
         this.y -= this.dy;
