@@ -49,7 +49,7 @@ class Hero extends Objet {
         let b = this.bullets[i]; 
         b.draw(ctx);
         //if ((b.x < 0) || (b.y < 0) || (b.x > width) || (b.y > height))
-        if (false == b.moveM())
+        if (false == b.moveB())
         {
           this.removeBullet(b)
         }

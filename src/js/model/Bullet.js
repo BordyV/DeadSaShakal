@@ -24,7 +24,7 @@ class Bullet {
     }
 
   
-    move(maxX, maxY) {
+    moveB(maxX, maxY) {
       
 
     if(this.nbRebond >0)
