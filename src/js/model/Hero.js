@@ -1,9 +1,14 @@
-class Hero {
-    constructor(x, y, angle, vitesse,nbBullet, tempsMinEntreTirsEnMillisecondes) {
+class Hero extends Objet {
+
+    constructor(id, x, y, angle, vitesse,nbBullet, tempsMinEntreTirsEnMillisecondes, height, width) {
+      
+      super(id, x, y, height, width);
+      this.angle = angle;
       this.x = x;
       this.y = y;
-      this.angle = angle;
+    
       this.v = vitesse;
+      this.id =1;
       this.bullets = [];
       this.nbBullet = nbBullet;    
       this.soldeBullet = nbBullet;

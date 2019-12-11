@@ -1,6 +1,7 @@
 class Objet {
 
-  constructor(x,y, height, width){
+  constructor(id, x,y, height, width){
+    this.id = id;
       this.x = x;
       this.y = y;
       this.roation = 0;
