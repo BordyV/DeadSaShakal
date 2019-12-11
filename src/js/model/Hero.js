@@ -63,9 +63,7 @@ class Hero extends Objet {
       let dx = this.corps.height + 50 - mousepos.x;
       let dy = this.corps.width +75 - mousepos.y;
       this.angle = Math.atan2(dy, dx);
-      
-      
-      
+
     }
     
      addBullet(time) {

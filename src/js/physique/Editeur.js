@@ -41,11 +41,6 @@ function init() {
 
         if(evt.button === 0) {
             touche = false;
-            objet.id = objetSelectione;
-            objet.orientation = 0;
-            objet.taille = 1;
-            objet.x = mousepos.x;
-            objet.y = mousepos.y;
             mapTemp.forEach(m => {
 
                 if (this.GetCollision(m)) {
@@ -68,9 +63,10 @@ function init() {
                     mapTemp.push(new Mur(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
                     break;
                 case 1:
-                    mapTemp.push(new Hero(objTemp.x, objTemp.y,objTemp.angle,objTemp.v,objTemp.nbBullet,objTemp.delayMinBetweenBullets));
+                    mapTemp.push(new Hero(objTemp.id,objTemp.x, objTemp.y,objTemp.angle,objTemp.v,objTemp.nbBullet,objTemp.delayMinBetweenBullets, objTemp.height, objTemp.width));
+                    break;
                 case 2:
-                    mapTemp.push(new Mechant(objTemp.x, objTemp.y));
+                    mapTemp.push(new Mechant(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
 
 
             }
@@ -112,24 +108,24 @@ function init() {
     window.addEventListener('keyup', function(evt) {
         // let key = evt.keyCode;
 
-        if (evt.keyCode === 97) { // 1
+        if (evt.keyCode === 65) { // 1
             objTemp = new Mur(101, mousepos.x,mousepos.y,100,100);
             objetSelectione = 101;
 
         }
 
-        if (evt.keyCode === 98) { // 1
+        if (evt.keyCode === 90) { // 1
             objTemp = new Mur(102, mousepos.x,mousepos.y,100,100);
             objetSelectione = 102;
             //   console.log("Oui"+evt.keyCode);
         }
-        if (evt.keyCode === 99) { // 1
-            objTemp = new Hero(mousepos.x,mousepos.y,0,1,5,100);
+        if (evt.keyCode === 69) { // 1
+            objTemp = new Hero(1,mousepos.x,mousepos.y,0,1,5,100);
             objetSelectione = 1;
             //   console.log("Oui"+evt.keyCode);
         }
-        if (evt.keyCode === 100) { // 1
-            objTemp = new Mechant(mousepos.x,mousepos.y);
+        if (evt.keyCode === 82) { // 1
+            objTemp = new Mechant(2,mousepos.x,mousepos.y);
             objetSelectione = 2;
             //   console.log("Oui"+evt.keyCode);
         }
