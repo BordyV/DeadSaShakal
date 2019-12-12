@@ -40,7 +40,10 @@ class Hero extends Objet {
       ctx.translate(70, 80);
       
       ctx.rotate(this.angle);
-      ctx.drawImage(this.arme, -50, -0);      
+        if(mousepos.x < this.x+this.width/2){
+            ctx.scale(1,-1);
+        }
+        ctx.drawImage(this.arme, -50, -0);
       ctx.restore();
       
       this.drawBullets(ctx);
@@ -64,6 +67,9 @@ class Hero extends Objet {
       let dx = this.armeX - mousepos.x;
       let dy = this.armeY - mousepos.y;
       this.angle = Math.atan2(dy, dx);
+
+
+      console.log(this.angle);
 
     }
     

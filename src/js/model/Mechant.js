@@ -2,8 +2,7 @@ class Mechant extends Objet {
     constructor(id, x, y, height, width) {
       super(id, x, y, height, width);
        this.id = id;
-        this.vivant=1;
-        this.image = document.getElementById("mechant");  
+        this.image = document.getElementById("mechant");
         this.height =this.image.height;
         this.width = this.image.width;
 
@@ -15,8 +14,10 @@ class Mechant extends Objet {
       ctx.drawImage(this.image, 0, 0);
       ctx.restore();
     }
-    mort(ctx)
+    mort()
     {
-      this.vivant=0;
+         mechants.splice(mechants.indexOf(this), 1);
+         console.log("mort");
+
     }
 }

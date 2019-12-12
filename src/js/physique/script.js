@@ -14,7 +14,9 @@ function anime() {
     map.map(c => {
         c.draw(ctx);
     });
-      
+    mechants.map(c => {
+        c.draw(ctx);
+    });
 
     if(inputStates.SPACE) {
       hero1.addBullet(Date.now()); 

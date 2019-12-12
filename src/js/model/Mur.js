@@ -29,8 +29,6 @@ class Mur extends Objet{
   draw(ctx) {
       ctx.save();
       ctx.translate(this.x, this.y);
-      ctx.translate(-10, -10);
-
       ctx.shadowColor = "black";
       ctx.shadowBlur = 15;
 
