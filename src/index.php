@@ -123,10 +123,10 @@ exit;}
 
 <div id="sliders">
 <div class="slidecontainer" style="position:relative; left:1100px; top:-260px;">
-  <input type="range" min="1" max="800" value="50" class="slider" id="sliderY">
+  <input type="range" min="1" max="750" value="50" class="slider" id="sliderY">
 </div>
 <div class="slidecontainer" style="position:relative; left:200px; top:00px;">
-  <input type="range" min="1" max="800" value="50" class="sliderX" id="sliderX">
+  <input type="range" min="1" max="1300" value="50" class="sliderX" id="sliderX">
 </div>
 </div>
 </body>

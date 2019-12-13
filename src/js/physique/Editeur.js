@@ -144,7 +144,7 @@ function inita() {
             //
 
 
-            mapLoad = map2;
+            mapLoad = map1;
             console.log(mapLoad);
             mapTemp =[];
             for (i in mapLoad)

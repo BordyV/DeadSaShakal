@@ -43,8 +43,34 @@ function menu() {
                     ctx = canvas.getContext('2d');
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     boutons=[];
-                    mapActuelle = new Map(map2);
+                    mapActuelle = new Map(map1);
                    anime();
+                }
+                if(b.id == 102)
+                {
+                    canvas.addEventListener('click', function (evt) {
+
+                        mapActuelle.leHero.addBullet(Date.now());
+
+                    });
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons=[];
+                    mapActuelle = new Map(map2);
+                    anime();
+                }
+                if(b.id == 103)
+                {
+                    canvas.addEventListener('click', function (evt) {
+
+                        mapActuelle.leHero.addBullet(Date.now());
+
+                    });
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons=[];
+                    mapActuelle = new Map(map3);
+                    anime();
                 }
             }
         })
@@ -86,20 +112,28 @@ function menu() {
 
 
 function MenuJouer() {
+    let niveau2 = { x: 170, y: 100 ,w:100,h:100,id:102};
+    let niveau3 = { x: 320, y: 100 ,w:100,h:100,id:103};
     ctx.save();
     ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     boutons=[];
-    btnEditeur = { x: 20, y: 100 ,w:100,h:100,id:101};
-    boutons.push(btnEditeur);
+    niveau1 = { x: 20, y: 100 ,w:100,h:100,id:101};
+    boutons.push(niveau1);
+    boutons.push(niveau2);
+    boutons.push(niveau3);
     ctx.fillStyle = '#00001a';
     ctx.globalAlpha = 0.6;
     ctx.fillRect(20,100,100,100);
+    ctx.fillRect(170,100,100,100);
+    ctx.fillRect(320,100,100,100);
     ctx.globalAlpha = 1;
     ctx.font = "900 60px Charcoal";
     ctx.fillStyle = ' #e60000';
     ctx.fillText("Selection des niveaux",(canvas.width/2)-ctx.measureText('Selection des niveaux').width/2 , 60);
     ctx.fillText("1", 55, 170);
+    ctx.fillText("2", 205, 170);
+    ctx.fillText("3", 355, 170);
     ctx.restore();
 
 

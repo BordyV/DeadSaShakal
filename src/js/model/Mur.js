@@ -32,8 +32,10 @@ class Mur extends Objet{
       ctx.shadowBlur = 15;
       ctx.shadowColor = "black";
       if(this.surbrillance) {
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "cyan";
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = "white";
+
+
       }
 
 

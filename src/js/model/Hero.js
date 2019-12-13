@@ -32,8 +32,8 @@ class Hero extends Objet {
       ctx.translate(this.x, this.y);
       // ctx.rotate(this.angle);
         if(this.surbrillance) {
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = "cyan";
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = "white";
         }
       
       // corps

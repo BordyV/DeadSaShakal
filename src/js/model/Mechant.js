@@ -12,9 +12,9 @@ class Mechant extends Objet {
       ctx.save();        
       ctx.translate(this.x, this.y);
         if(this.surbrillance) {
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = "cyan";
-             = "cyan";
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = "white";
+
         }
 
       ctx.drawImage(this.image, 0, 0);
