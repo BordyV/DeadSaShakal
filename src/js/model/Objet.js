@@ -5,6 +5,7 @@ class Objet {
       this.x = x;
       this.y = y;
       this.roation = 0;
+      this.surbrillance = false;
   }
 
   move(mousepos) {

@@ -8,6 +8,7 @@ let objetSelectione = 101;
 var mousepos = { x: 0, y: 0 };
 var inputStates = {};
 var touche;
+var theObj;
 let sliderY;
 let sliderX;
 var map;
@@ -42,6 +43,8 @@ function inita() {
 
         if(evt.button === 0) {
             touche = false;
+            if(theObj !=null)
+            theObj.surbrillance = false;
             mapTemp.forEach(m => {
 
                 if (this.GetCollision(m)) {
@@ -50,7 +53,8 @@ function inita() {
                     sliderY.value = m.height;
                     sliderX.value = m.width;
                     ModifTaille(m);
-
+                    theObj= m;
+                    theObj.surbrillance = true;
                 }
             })
             if(mousepos.x>1275 || mousepos.y>710)
@@ -94,7 +98,7 @@ function inita() {
             if (!selection)
             mapTemp.forEach(m => {
 
-                if (this.GetCollision(m)) {
+                if (this.GetCollision(m) && m === theObj) {
                     selection = true;
                     mapTemp.splice(mapTemp.indexOf(m),1);
                     objTemp = m;

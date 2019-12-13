@@ -11,7 +11,14 @@ class Mechant extends Objet {
     drawObj(ctx) {
       ctx.save();        
       ctx.translate(this.x, this.y);
+        if(this.surbrillance) {
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = "cyan";
+             = "cyan";
+        }
+
       ctx.drawImage(this.image, 0, 0);
+
       ctx.restore();
     }
     mort()

@@ -29,8 +29,13 @@ class Mur extends Objet{
     drawObj(ctx) {
       ctx.save();
       ctx.translate(this.x, this.y);
-      ctx.shadowColor = "black";
       ctx.shadowBlur = 15;
+      ctx.shadowColor = "black";
+      if(this.surbrillance) {
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "cyan";
+      }
+
 
       ctx.drawImage(this.image, 0, 0,this.width,this.height);
       
