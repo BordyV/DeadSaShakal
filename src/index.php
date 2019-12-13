@@ -121,19 +121,13 @@ exit;}
   <input type="range" min="1" max="400" value="50" class="sliderX" id="sliderX">
 </div> -->
 
-
+<div id="sliders">
 <div class="slidecontainer" style="position:relative; left:1100px; top:-260px;">
   <input type="range" min="1" max="800" value="50" class="slider" id="sliderY">
 </div>
 <div class="slidecontainer" style="position:relative; left:200px; top:00px;">
   <input type="range" min="1" max="800" value="50" class="sliderX" id="sliderX">
 </div>
-
-
-  <form method="get" action="index.php">
-  <input class="Restart"
-        type="submit" name="Restart">
-</form>
-
+</div>
 </body>
 </html>

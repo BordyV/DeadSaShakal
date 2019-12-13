@@ -8,6 +8,10 @@ canvas {
 
 }
 
+#sliders{
+    display: none;
+}
+
 .slider {
     -webkit-appearance: none;
     width: 500px;

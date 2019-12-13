@@ -118,10 +118,5 @@ exit;}
   <input type="range" min="1" max="800" value="50" class="sliderX" id="sliderX">
 </div>
 
-  <form method="get" action="index.php">
-  <input class="Restart"
-        type="submit" name="Restart">
-</form>
-
 </body>
 </html>

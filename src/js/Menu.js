@@ -20,12 +20,17 @@ function menu() {
                 {
                     console.log("dddd");
                     MenuJouer();
+                    document.getElementById("sliders").style.display = "none";
+
                 }
                 if(b.id == 2)
                 {
                     boutons=[];
                     inita();
                    ctx.canvas =  Loii();
+                  
+                   document.getElementById("sliders").style.display = "unset";
+
 
                 }
                 if(b.id == 101)
