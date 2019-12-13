@@ -24,9 +24,10 @@ class Hero extends Objet {
       this.armeY = this.y+this.height/2;
       this.armeWidth = this.arme.width;
       this.armeHeight = this.arme.height;
+        this.moveM(mousepos);
     }
     
-    draw(ctx) {
+    drawObj(ctx) {
       ctx.save();
       ctx.translate(this.x, this.y);
       // ctx.rotate(this.angle);
@@ -53,7 +54,7 @@ class Hero extends Objet {
     drawBullets(ctx) {
       for(let i = 0; i < this.bullets.length; i++) {
         let b = this.bullets[i]; 
-        b.draw(ctx);
+        b.drawObj(ctx);
         //if ((b.x < 0) || (b.y < 0) || (b.x > width) || (b.y > height))
         if (false == b.moveB())
         {
@@ -68,8 +69,6 @@ class Hero extends Objet {
       let dy = this.armeY - mousepos.y;
       this.angle = Math.atan2(dy, dx);
 
-
-      console.log(this.angle);
 
     }
     
@@ -94,7 +93,7 @@ class Hero extends Objet {
       }
       else
       {
-          alert("Plus de balles");
+         // alert("Plus de balles");
   
       }
      }

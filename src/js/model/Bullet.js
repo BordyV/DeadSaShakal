@@ -9,7 +9,7 @@ class Bullet {
         this.dy = 20 * Math.sin(this.angle);
       }
 
-    draw(ctx) {
+    drawObj(ctx) {
       ctx.save();        
       var image = document.getElementById("bullet");
       ctx.translate(this.x, this.y);
@@ -29,7 +29,7 @@ class Bullet {
 
     if(this.nbRebond >0)
     {
-      lesMurs.forEach(m => {
+        mapActuelle.lesMurs.forEach(m => {
         
       if(this.testerCollision(m))
           {
@@ -37,7 +37,7 @@ class Bullet {
       }
         
     });
-        mechants.map(c => {
+        mapActuelle.mechants.map(c => {
             if(this.testerCollisionMechant(c))
             {
 

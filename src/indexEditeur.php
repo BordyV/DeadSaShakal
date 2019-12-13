@@ -68,7 +68,7 @@
 
 
 <script src="js/physique/Editeur.js"></script>
-<!--<script src="js/init.js"></script>-->
+<!--<script src="js/Menu.js"></script>-->
 <!--<script src="js/physique/script.js"></script>-->
 <!-- JS MODEL -->
 <script src="js/model/Objet.js"></script>
@@ -95,7 +95,7 @@ if(isset($_GET['Restart']))
 header("Location: index.php");
 exit;}
 ?>
-<body onload="init();">
+<body onload="menu();">
   <canvas id="myCanvas" width="1280" height="720">
   </canvas>
   <div style="display:none;">

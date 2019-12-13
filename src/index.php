@@ -2,13 +2,78 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.slidecontainer {
+  width: 500px;
+
+}
+
+.slider {
+     -webkit-appearance: none;
+     width: 500px;
+     height: 25px;
+     background: #d3d3d3;
+     outline: none;
+     opacity: 0.7;
+     -webkit-transition: .2s;
+     transition: opacity .2s;
+   transform: rotate(270deg)
+   }
+   .sliderX {
+     -webkit-appearance: none;
+     width: 500px;
+     height: 25px;
+     background: #d3d3d3;
+     outline: none;
+     opacity: 0.7;
+     -webkit-transition: .2s;
+     transition: opacity .2s;
+
+   }
+
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+.sliderX::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+   width: 25px;
+   height: 25px;
+   background: #4CAF50;
+   cursor: pointer;
+ }
+ .sliderX::-moz-range-thumb {
+   width: 25px;
+   height: 25px;
+   background: #4CAF50;
+   cursor: pointer;
+ }
+</style>
+
+
+
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 <title>Bullet</title>
 
-
+<script src="js/physique/Editeur.js"></script>
 <script src="map/map2.json"></script>
-<script src="js/init.js"></script>
+<script src="js/Menu.js"></script>
+<script src="js/physique/Map.js"></script>
 <script src="js/physique/script.js"></script>
 <!-- JS MODEL -->
 <script src="js/model/Objet.js"></script>
@@ -18,7 +83,7 @@
 <script src="js/model/Mur.js"></script>
   <!-- editeur -->
   <!--
-<script src="js/physique/Editeur.js"></script>
+
 <script src="js/model/Caisse.js"></script>
 
 -->
@@ -33,7 +98,7 @@ if(isset($_GET['Restart']))
 header("Location: index.php");
 exit;}
 ?>
-<body onload="init();">
+<body onload="menu();">
   <canvas id="myCanvas" width="1280" height="720">
   </canvas>
   <div style="display:none;">
@@ -55,6 +120,15 @@ exit;}
 <div class="slidecontainer" style="position:relative; left:200px; top:100px;">
   <input type="range" min="1" max="400" value="50" class="sliderX" id="sliderX">
 </div> -->
+
+
+<div class="slidecontainer" style="position:relative; left:1100px; top:-260px;">
+  <input type="range" min="1" max="800" value="50" class="slider" id="sliderY">
+</div>
+<div class="slidecontainer" style="position:relative; left:200px; top:00px;">
+  <input type="range" min="1" max="800" value="50" class="sliderX" id="sliderX">
+</div>
+
 
   <form method="get" action="index.php">
   <input class="Restart"

@@ -10,16 +10,16 @@ var inputStates = {};
 var touche;
 let sliderY;
 let sliderX;
-var mapLoad;
+var map;
 
 window.onloadend = Loii();
 
 function Loii() {
-
+return (ctx);
 
 }
 
-function init() {
+function inita() {
 
     canvas = document.querySelector("#myCanvas");
     ctx = canvas.getContext('2d');
@@ -74,7 +74,7 @@ function init() {
             objTemp= new Mur(101, mousepos.x,mousepos.y,100,100);
             objetSelectione =101;
             console.log("objet: " + mapTemp);
-            
+
         }
 
        else if(evt.button ===2)
@@ -141,6 +141,7 @@ function init() {
 
 
             mapLoad = map2;
+            console.log(mapLoad);
             mapTemp =[];
             for (i in mapLoad)
             {
@@ -174,23 +175,23 @@ function init() {
         inputStates.SPACE = false;
     });
 
-    anime();
+    animeE();
 }
 
 
-function anime() {
+function animeE() {
 
     // 1) On efface l'Ã©cran
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    objTemp.draw(ctx);
+    objTemp.drawObj(ctx);
     objTemp.move(mousepos);
     mapTemp.map(c => {
-        c.draw(ctx);
+        c.drawObj(ctx);
     });
 
 
     // On demande une nouvelle frame d'animation
-    window.requestAnimationFrame(anime);
+    window.requestAnimationFrame(animeE);
 
 }
 

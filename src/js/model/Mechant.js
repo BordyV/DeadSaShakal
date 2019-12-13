@@ -8,7 +8,7 @@ class Mechant extends Objet {
 
         }
 
-    draw(ctx) {
+    drawObj(ctx) {
       ctx.save();        
       ctx.translate(this.x, this.y);
       ctx.drawImage(this.image, 0, 0);
@@ -16,7 +16,7 @@ class Mechant extends Objet {
     }
     mort()
     {
-         mechants.splice(mechants.indexOf(this), 1);
+        mapActuelle.mechants.splice( mapActuelle.mechants.indexOf(this), 1);
          console.log("mort");
 
     }

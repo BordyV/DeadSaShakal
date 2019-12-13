@@ -42,6 +42,19 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Node.js.Mechant.js">
+    <configuration name="Map.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/physique/Map.js" working-dir="$PROJECT_DIR$/js/physique">
+      <method v="2" />
+    </configuration>
+    <configuration name="Mechant.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/model/Mechant.js" working-dir="$PROJECT_DIR$/js/model">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Mechant.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -63,6 +76,8 @@
       <workItem from="1576075095831" duration="313000" />
       <workItem from="1576078479787" duration="1374000" />
       <workItem from="1576140670774" duration="7265000" />
+      <workItem from="1576174978045" duration="18434000" />
+      <workItem from="1576198614571" duration="2542000" />
     </task>
     <servers />
   </component>

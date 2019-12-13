@@ -1,25 +1,29 @@
-window.onload = init;
+window.onload = menu;
 var storage = {};
-
+var mapActuelle;
 
 function anime() {
-  
+
+
+    console.log(mapActuelle.leHero.nbBullet);
     // 1) On efface l'ecran
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
     // 2) On dessine et on déplace la direction du hero 1
-     hero1.draw(ctx);
-     hero1.moveM(mousepos);
-    map.map(c => {
-        c.draw(ctx);
+     mapActuelle.leHero.drawObj(ctx);
+    mapActuelle.leHero.moveM(mousepos);
+    mapActuelle.mapInfo.map(c => {
+        c.drawObj(ctx);
+
     });
-    mechants.map(c => {
-        c.draw(ctx);
+    mapActuelle.mechants.map(c => {
+        c.drawObj(ctx);
     });
 
     if(inputStates.SPACE) {
-      hero1.addBullet(Date.now()); 
+
+        mapActuelle.leHero.addBullet(Date.now());
     }
   
     // On demande une nouvelle frame d'animation
