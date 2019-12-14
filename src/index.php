@@ -92,15 +92,42 @@
 
 
 </head>
-<?php
-if(isset($_GET['Restart']))
-{
-header("Location: index.php");
-exit;}
-?>
+
+<script>
+function chargePageJouer() {
+
+  document.getElementById("myCanvas").style.display = "";
+  document.getElementById("Regles").style.display = "none";
+  document.getElementById("liRegles").classList.remove("active");
+  document.getElementById("liJouer").classList.add("active");
+
+}
+
+function chargePageRegles() {
+
+  document.getElementById("Regles").style.display = "unset";
+  document.getElementById("myCanvas").style.display = "none";
+  document.getElementById("sliders").style.display = "none";
+  document.getElementById("liRegles").classList.add("active");
+  document.getElementById("liJouer").classList.remove("active");
+
+
+
+}
+</script>
+
 <body onload="menu();">
+<div id ="menu">
+  <ul>
+    <li><a id="liJouer" class="" href="#Jouer" onclick="chargePageJouer()">Jouer</a></li>
+    <li><a id="liRegles" class="" href="#Regles" onclick="chargePageRegles()">Regles</a></li>
+  </ul>
+</div>
+<br>
+
   <canvas id="myCanvas" width="1280" height="720">
   </canvas>
+
   <div style="display:none;">
   <img id="bullet" src="img/b.svg">
   <img id="hero" src="img/hero.svg">
@@ -111,9 +138,38 @@ exit;}
   <img id="mur2" src="img/mur2.svg">
 
   <img id="plateforme" src="img/plateforme.svg">
-  <!-- <img id="bullet" width="10px" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"> -->
 </div>
 
+
+
+
+<div style="display:none;" id="Regles">
+<h1>Explication des règles.</h1>
+<h2>Le but du jeu:</h2>
+<p>
+Le but du jeu est simple vous êtes un hero <img src="img/hero.svg"> et votre but et d'éliminer les ennemies  <img src="img/mechant.svg">
+à travers différents niveaux à l'aide de rebond sur les différents murs et obstacles.<br>
+<img width="1000" src="img/Regles/niveau.png"></p>
+<p>
+<b>Attention !</b> les balles sont limités tout comme le nombre de rebonds.</p>
+<h2>L'éditeur de niveau : </h2>
+<p>
+
+L'editeur de niveau va vous permettre de créer vos propres niveaux et de les importer.<br>
+<img width="1000" src="img/Regles/editeur.png"><br><br>
+Voici une liste des actions réalisables avec l'éditeur de niveau: <br><br>
+-Sélectionner les objets à placer avec les touches <img width ="18"src="img/Regles/a.svg"> (mur) -
+<img width ="18"src="img/Regles/z.svg"> (mur) - 
+<img width ="18"src="img/Regles/e.svg"> (hero) - 
+<img width ="18"src="img/Regles/r.svg"> (Ennemie)<br>
+-Placer les objets avec clique gauche. <br>
+-Clique droit supprime l'objet placé. <br>
+-Clique gauche sur un objet placé pour le sélectionner.<img width="50"src="img/Regles/objSelection.png"> Il devient alors surbrillant.<br>
+-Pour modifier la taille de l'objet sélectionné utiliser le slider de droite pour la hauteur, le slider du bas pour la largeur.
+<img src="img/Regles/slider.png"><br>
+-Pour déplacer un objet déjà placé: Le sélectionner puis cliquer dessus sans relacher le clique et le déplacer avec la souris.<br>
+</p>
+</div>
 <!-- <div class="slidecontainer" style="position:relative; left:1200px; top:-200px;">
   <input type="range" min="1" max="400" value="50" class="slider" id="sliderY">
 </div>
@@ -122,10 +178,10 @@ exit;}
 </div> -->
 
 <div id="sliders">
-<div class="slidecontainer" style="position:relative; left:1100px; top:-260px;">
+<div class="slidecontainer" style="position:relative;margin-left:80%; top:-260px;">
   <input type="range" min="1" max="750" value="50" class="slider" id="sliderY">
 </div>
-<div class="slidecontainer" style="position:relative; left:200px; top:00px;">
+<div class="slidecontainer" style="position:relative; margin-left:40%; top:00px;">
   <input type="range" min="1" max="1300" value="50" class="sliderX" id="sliderX">
 </div>
 </div>
