@@ -1,37 +1,45 @@
 class Mur extends Objet{
 
   constructor(id, x,y, height, width) {
-    super(x,y);
+    super(id, x,y,height, width);
     this.id=id;
-    if(this.id == 1)
+    this.width = width;
+    this.height = height;
+    if(this.id == -1)
+      {this.image = document.getElementById("mur1");}
+    if(this.id == 101)
     {
     this.image = document.getElementById("mur1");
     }
-    else if (this.id ==2)
+    else if (this.id ==102)
     {
-      this.image = document.getElementById("mur2");
+        this.image = document.getElementById("plateforme");
 
     }
-    else if (this.id ==3)
+    else if (this.id ==103)
     {
-      this.image = document.getElementById("plateforme");
+
 
     }
-    this.height =this.image.height;
-    this.width = this.image.width;
+
 
 
   }
 
-  draw(ctx) {
+    drawObj(ctx) {
       ctx.save();
       ctx.translate(this.x, this.y);
-      ctx.translate(-10, -10);
-      // ctx.fillRect(-1, -1, this.height+3, this.width+3);
-      ctx.shadowColor = "black";
       ctx.shadowBlur = 15;
-      
-      ctx.drawImage(this.image, 0, 0);
+      ctx.shadowColor = "black";
+      if(this.surbrillance) {
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = "white";
+
+
+      }
+
+
+      ctx.drawImage(this.image, 0, 0,this.width,this.height);
       
 
 

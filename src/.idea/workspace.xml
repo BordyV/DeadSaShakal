@@ -16,7 +16,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="ADD_SUFFIX_TO_CHERRY_PICKS_OF_PUBLISHED_COMMITS" value="false" />
+    <option name="PREVIEW_PUSH_ON_COMMIT_AND_PUSH" value="false" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="ProjectId" id="1TYLf4ID3DIvaew8Tr0Hd0UNPNc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -37,6 +42,19 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Node.js.Mechant.js">
+    <configuration name="Map.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/physique/Map.js" working-dir="$PROJECT_DIR$/js/physique">
+      <method v="2" />
+    </configuration>
+    <configuration name="Mechant.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/model/Mechant.js" working-dir="$PROJECT_DIR$/js/model">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Mechant.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -51,6 +69,16 @@
       <workItem from="1573635204088" duration="16963000" />
       <workItem from="1573739521989" duration="3971000" />
       <workItem from="1574243021152" duration="292000" />
+      <workItem from="1575994232195" duration="24350000" />
+      <workItem from="1576048257628" duration="3866000" />
+      <workItem from="1576053325529" duration="128000" />
+      <workItem from="1576053480981" duration="8144000" />
+      <workItem from="1576075095831" duration="313000" />
+      <workItem from="1576078479787" duration="1374000" />
+      <workItem from="1576140670774" duration="7265000" />
+      <workItem from="1576174978045" duration="18434000" />
+      <workItem from="1576198614571" duration="2542000" />
+      <workItem from="1576255540396" duration="2019000" />
     </task>
     <servers />
   </component>

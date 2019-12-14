@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 .slidecontainer {
   width: 500px;
@@ -63,30 +62,28 @@
    cursor: pointer;
  }
 </style>
-
-
-
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 <title>Bullet</title>
 
+
 <script src="js/physique/Editeur.js"></script>
-<script src="map/map2.json"></script>
-<script src="js/Menu.js"></script>
-<script src="js/physique/Map.js"></script>
-<script src="js/physique/script.js"></script>
+<!--<script src="js/Menu.js"></script>-->
+<!--<script src="js/physique/script.js"></script>-->
 <!-- JS MODEL -->
 <script src="js/model/Objet.js"></script>
 <script src="js/model/Hero.js"></script>
 <script src="js/model/Bullet.js"></script>
 <script src="js/model/Mechant.js"></script>
 <script src="js/model/Mur.js"></script>
+<script src="js/model/Plateforme.js"></script>
+<script src="map/map.json" ></script>
+<script src="map/map2.json" ></script>
+
   <!-- editeur -->
-  <!--
 
 <script src="js/model/Caisse.js"></script>
 
--->
 
 
 
@@ -114,20 +111,12 @@ exit;}
   <!-- <img id="bullet" width="10px" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"> -->
 </div>
 
-<!-- <div class="slidecontainer" style="position:relative; left:1200px; top:-200px;">
-  <input type="range" min="1" max="400" value="50" class="slider" id="sliderY">
+<div class="slidecontainer" style="position:relative; left:1200px; top:-200px;">
+  <input type="range" min="1" max="800" value="50" class="slider" id="sliderY">
 </div>
 <div class="slidecontainer" style="position:relative; left:200px; top:100px;">
-  <input type="range" min="1" max="400" value="50" class="sliderX" id="sliderX">
-</div> -->
+  <input type="range" min="1" max="800" value="50" class="sliderX" id="sliderX">
+</div>
 
-<div id="sliders">
-<div class="slidecontainer" style="position:relative; left:1100px; top:-260px;">
-  <input type="range" min="1" max="750" value="50" class="slider" id="sliderY">
-</div>
-<div class="slidecontainer" style="position:relative; left:200px; top:00px;">
-  <input type="range" min="1" max="1300" value="50" class="sliderX" id="sliderX">
-</div>
-</div>
 </body>
 </html>

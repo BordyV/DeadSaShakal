@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -131,8 +131,21 @@
        points="-214.6483,370.54447 -345.12243,357.64152 -345.12243,590.84726 -214.6483,588.10733 " />
   </g>
   <path
-     style="opacity:1;fill:#b10022;fill-opacity:1;stroke-width:0.35152432"
-     d="M 106.44758,-4.2123058 105.94319,-4.7698119 9.0721456,106.82602 106.44758,106.26242 Z"
+     style="opacity:1;fill:#b10022;fill-opacity:1;stroke-width:0.37446937"
+     d="M 106.44758,-4.2123058 105.87519,-4.7698119 -4.05471,106.82602 106.44758,106.26242 Z"
      id="path964"
      inkscape:connector-curvature="0" />
+  <circle
+     style="opacity:1;fill:#d6002b;fill-opacity:1"
+     id="path875"
+     cx="183.98108"
+     cy="73.541183"
+     r="7.9991775" />
+  <ellipse
+     style="opacity:1;fill:#8daaa7;fill-opacity:1"
+     id="path877"
+     cx="198.33858"
+     cy="59.799004"
+     rx="4.3072495"
+     ry="4.1021423" />
 </svg>

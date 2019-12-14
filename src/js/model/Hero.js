@@ -1,9 +1,14 @@
-class Hero {
-    constructor(x, y, angle, vitesse,nbBullet, tempsMinEntreTirsEnMillisecondes) {
+class Hero extends Objet {
+
+    constructor(id, x, y, angle, vitesse,nbBullet, tempsMinEntreTirsEnMillisecondes, height, width) {
+      
+      super(id, x, y, height, width);
+      this.angle = angle;
       this.x = x;
       this.y = y;
-      this.angle = angle;
+    
       this.v = vitesse;
+      this.id =1;
       this.bullets = [];
       this.nbBullet = nbBullet;    
       this.soldeBullet = nbBullet;
@@ -14,27 +19,35 @@ class Hero {
       this.arme = document.getElementById("arme");
       this.height =this.corps.height;
       this.width =this.corps.width;
+
+      this.armeX = this.x +this.width;
+      this.armeY = this.y+this.height/2;
+      this.armeWidth = this.arme.width;
+      this.armeHeight = this.arme.height;
+        this.moveM(mousepos);
     }
     
-    draw(ctx) {
+    drawObj(ctx) {
       ctx.save();
       ctx.translate(this.x, this.y);
       // ctx.rotate(this.angle);
-     
-
-      
-      ctx.translate(-10, -10);
+        if(this.surbrillance) {
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = "white";
+        }
       
       // corps
       ctx.drawImage(this.corps, 0, 0);
       // ctx.fillRect(0, 0, 20, 20);
-      
       // canon
-      ctx.translate(this.x/1.5, this.y-20);
-      ctx.rotate(this.angle);
-      ctx.drawImage(this.arme, -50, -0);
-      // ctx.fillRect(-10, 9, 10, 2);
       
+      ctx.translate(70, 80);
+      
+      ctx.rotate(this.angle);
+        if(mousepos.x < this.x+this.width/2){
+            ctx.scale(1,-1);
+        }
+        ctx.drawImage(this.arme, -50, -0);
       ctx.restore();
       
       this.drawBullets(ctx);
@@ -44,23 +57,22 @@ class Hero {
     drawBullets(ctx) {
       for(let i = 0; i < this.bullets.length; i++) {
         let b = this.bullets[i]; 
-        b.draw(ctx);
+        b.drawObj(ctx);
         //if ((b.x < 0) || (b.y < 0) || (b.x > width) || (b.y > height))
-        if (false == b.move())
+        if (false == b.moveB())
         {
           this.removeBullet(b)
         }
       }
     }
     
-    move(mousepos) {
+    moveM(mousepos) {
           // 2) On deplace la balle 
-      let dx = this.corps.height + 50 - mousepos.x;
-      let dy = this.corps.width +75 - mousepos.y;
+      let dx = this.armeX - mousepos.x;
+      let dy = this.armeY - mousepos.y;
       this.angle = Math.atan2(dy, dx);
-      
-      
-      
+
+
     }
     
      addBullet(time) {
@@ -84,7 +96,7 @@ class Hero {
       }
       else
       {
-          alert("Plus de balles");
+         // alert("Plus de balles");
   
       }
      }

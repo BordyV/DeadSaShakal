@@ -1,7 +1,7 @@
 var canvas, ctx;
 const rects = [];
 
-window.onload = init;
+window.onload = menu;
 
 class Rectangle {
   constructor(x, y, width, height, color, ctx) {

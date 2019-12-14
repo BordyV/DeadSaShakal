@@ -1,15 +1,15 @@
 
 class Bullet {
     constructor(hero) {
-        this.x = hero.x*2;
-        this.y = hero.y*1.5;
+        this.x = hero.armeX -hero.angle;
+        this.y = hero.armeY +hero.angle;
         this.angle = hero.angle;
         this.nbRebond = 9;
         this.dx = 20 * Math.cos(this.angle);
         this.dy = 20 * Math.sin(this.angle);
       }
 
-    draw(ctx) {
+    drawObj(ctx) {
       ctx.save();        
       var image = document.getElementById("bullet");
       ctx.translate(this.x, this.y);
@@ -17,46 +17,49 @@ class Bullet {
       //ctx.rotate(this.angle-(Math.PI/2));
       ctx.rotate(this.angle);
 
-      ctx.translate(-this.width, -this.height);
+     // ctx.translate(-this.width, -this.height);
       //ctx.drawImage(image, 0, 0);
       ctx.fillRect(0, 0, 20, 5);
       ctx.restore();
     }
 
   
-    move(maxX, maxY) {
+    moveB(maxX, maxY) {
       
 
     if(this.nbRebond >0)
     {
-      lesMurs.forEach(m => {
+        mapActuelle.lesMurs.forEach(m => {
         
       if(this.testerCollision(m))
           {
             this.GetMurCollision(m);            
       }
         
-    }); 
-        if(this.testerCollisionMechant(mechant1))
-        {
+    });
+        mapActuelle.mechants.map(c => {
+            if(this.testerCollisionMechant(c))
+            {
 
-          mechant1.mort(ctx);
-        }
+                c.mort();
+            }
 
-      if(this.x < 10 || this.x > canvas.width -10)
-      {
-        this.nbRebond -= 1;
-        this.dx *= -1;
-        this.angle *= -1;
-        ///ctx.rotate(thi.angle* this.angle-1)
-      }
-      if(this.y < 10 || this.y > canvas.height -10 )
-      {
-        this.nbRebond -= 1;
-        this.dy *= -1;
-        this;this.angle *= -1;
+        });
+
+
+      // if(this.x < 10 || this.x > canvas.width -10)
+      // {
+      //   this.nbRebond -= 1;
+      //   this.dx *= -1;
+      //   this.angle *= -1;
+      // }
+      // if(this.y < 10 || this.y > canvas.height -10 )
+      // {
+      //   this.nbRebond -= 1;
+      //   this.dy *= -1;
+      //   this;this.angle *= -1;
         
-      }
+      // }
 
         this.x -= this.dx;
         this.y -= this.dy;
@@ -66,9 +69,9 @@ class Bullet {
   }
   
   testerCollision(mur) {
-    if (((this.x < mur.x + mur.width
+    if (((this.x < Math.floor(mur.x) + Math.floor(mur.width)
          && this.x > mur.x)) ) {
-          if (((this.y < mur.y + mur.height
+          if (((this.y < Math.floor(mur.y) + Math.floor(mur.height)
             && this.y > mur.y)))
             {
            return true;
@@ -94,14 +97,14 @@ class Bullet {
               this.angle *= -1;
             }
 
-            if(mur.x+mur.width - Math.abs(this.dx) < this.x && mur.x+mur.width +Math.abs(this.dx) > this.x )
+            if(Math.floor(mur.x) + Math.floor(mur.width)  - Math.abs(this.dx) < this.x && (Math.floor(mur.x) + Math.floor(mur.width) +Math.abs(this.dx) > this.x ))
             {
               console.log("right");
               this.nbRebond -= 1;
               this.dx *= -1;
               this.angle *= -1;
             }
-            if(mur.y+ mur.height - Math.abs(this.dy) < this.y && mur.y+ mur.height +Math.abs(this.dy) > this.y )
+            if(Math.floor(mur.y) + Math.floor(mur.height) - Math.abs(this.dy) < this.y &&  (Math.floor(mur.y) + Math.floor(mur.height) +Math.abs(this.dy) > this.y ))
             {
               console.log("bot");
               this.nbRebond -= 1;
@@ -111,10 +114,12 @@ class Bullet {
   }
 
   testerCollisionMechant(mechant) {
-    if ( !(this.x > mechant.x + mechant.width
+
+    if ( !(this.x > Math.floor(mechant.x) + Math.floor(mechant.width)
          || this.x < mechant.x
-         || this.y > mechant.y + mechant.height
+         || this.y > Math.floor(mechant.y) + Math.floor(mechant.height)
          || this.y < mechant.y) ) {
+
            return true;
     } 
     else {

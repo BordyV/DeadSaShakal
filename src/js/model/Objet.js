@@ -1,9 +1,11 @@
 class Objet {
 
-  constructor(x,y){
+  constructor(id, x,y, height, width){
+    this.id = id;
       this.x = x;
       this.y = y;
       this.roation = 0;
+      this.surbrillance = false;
   }
 
   move(mousepos) {
