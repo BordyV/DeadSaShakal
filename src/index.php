@@ -176,10 +176,10 @@ Voici une liste des actions réalisables avec l'éditeur de niveau: <br>
 </div> -->
 
 <div id="sliders">
-<div class="slidecontainer" style="position:relative;margin-left:80%; top:-260px;">
+<div class="slidecontainer" style="position:relative;margin-left:85%; top:-260px;">
   <input type="range" min="1" max="750" value="50" class="slider" id="sliderY">
 </div>
-<div class="slidecontainer" style="position:relative; left:200px; top:00px;">
+<div class="slidecontainer" style="position:relative; margin-left:40%; top:00px;">
   <input type="range" min="1" max="1300" value="50" class="sliderX" id="sliderX">
 </div>
 </div>
