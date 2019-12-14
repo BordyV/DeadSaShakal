@@ -156,8 +156,8 @@ Le but du jeu est simple vous êtes un hero <img src="img/hero.svg"> et votre bu
 <p>
 
 L'editeur de niveau va vous permettre de créer vos propres niveaux et de les importer.<br>
-<img width="1000" src="img/Regles/editeur.png">
-Voici une liste des actions réalisables avec l'éditeur de niveau: <br>
+<img width="1000" src="img/Regles/editeur.png"><br><br>
+Voici une liste des actions réalisables avec l'éditeur de niveau: <br><br>
 -Sélectionner les objets à placer avec les touches <img width ="18"src="img/Regles/a.svg"> (mur) -
 <img width ="18"src="img/Regles/z.svg"> (mur) - 
 <img width ="18"src="img/Regles/e.svg"> (hero) - 
