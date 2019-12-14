@@ -92,15 +92,42 @@
 
 
 </head>
-<?php
-if(isset($_GET['Restart']))
-{
-header("Location: index.php");
-exit;}
-?>
+
+<script>
+function chargePageJouer() {
+
+  document.getElementById("myCanvas").style.display = "";
+  document.getElementById("Regles").style.display = "none";
+  document.getElementById("liRegles").classList.remove("active");
+  document.getElementById("liJouer").classList.add("active");
+
+}
+
+function chargePageRegles() {
+
+  document.getElementById("Regles").style.display = "unset";
+  document.getElementById("myCanvas").style.display = "none";
+  document.getElementById("sliders").style.display = "none";
+  document.getElementById("liRegles").classList.add("active");
+  document.getElementById("liJouer").classList.remove("active");
+
+
+
+}
+</script>
+
 <body onload="menu();">
+<div id ="menu">
+  <ul>
+    <li><a id="liJouer" class="" href="#Jouer" onclick="chargePageJouer()">Jouer</a></li>
+    <li><a id="liRegles" class="" href="#Regles" onclick="chargePageRegles()">Regles</a></li>
+  </ul>
+</div>
+<br>
+
   <canvas id="myCanvas" width="1280" height="720">
   </canvas>
+
   <div style="display:none;">
   <img id="bullet" src="img/b.svg">
   <img id="hero" src="img/hero.svg">
@@ -111,9 +138,39 @@ exit;}
   <img id="mur2" src="img/mur2.svg">
 
   <img id="plateforme" src="img/plateforme.svg">
-  <!-- <img id="bullet" width="10px" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"> -->
 </div>
 
+
+
+
+<div style="display:none;" id="Regles">
+<h1>Explication des regles.</h1>
+<h2>Le but du jeu:</h2>
+<p>
+Le but du jeu est simple vous êtes un hero <img src="img/hero.svg"> et votre but et d'eliminer les ennemies  <img src="img/mechant.svg">
+a travers differents niveaux.<br>
+<img width="1000" src="img/Regles/niveau.png"></p>
+<p>
+Jeu de Tir avec rebond. Nous controlons un personnage qui ne bouge pas mais déplace une arme ( à 360 degrés ) et qui tire balle par balle.<br>
+La balle aura une vitesse défini et pourra rebondir 10x maximum.<br>
+Il y aura plusieurs niveaux déjà prédéfinis avec des ennemies, des objets intéractifs quand ils rentrent en contact avec la balle ( exemple tnt, boule qui roule, ect... ).<br>
+Les personnages (ennemies ou non), les objets mais pas les balles seront soumis à la gravité. <br><br>
+
+
+Démo jeu:
+<br>
+2 boutons:<br>
+-Jouer:<br>
+Pour jouer il faut cliquer sur le bouton jouer et sélectionner son niveau. Pas encore de retour au niveau et de passage une fois le niveau fait.<br>
+-Editeur:
+Dans l'éditeur vous pouvez sélectionner les objets à placer avec les touches A (mur) - Z (mur) - E (hero) - R (Ennemie)<br>
+Placer les objets avec clique gauche. <br>
+Clique droit supprime l'objet placé. <br>
+Clique gauche sur un objet placé pour le sélectionner.<br>
+Pour modifier la taille de l'objet sélectionné utiliser le slider de droite pour la hauteur, le slider du bas pour la largeur.<br>
+Pour déplacer un objet déjà placé: Le sélectionner puis cliquer dessus sans relacher le clique et le déplacer avec la souris.<br>
+</p>
+</div>
 <!-- <div class="slidecontainer" style="position:relative; left:1200px; top:-200px;">
   <input type="range" min="1" max="400" value="50" class="slider" id="sliderY">
 </div>
@@ -122,7 +179,7 @@ exit;}
 </div> -->
 
 <div id="sliders">
-<div class="slidecontainer" style="position:relative; left:1100px; top:-260px;">
+<div class="slidecontainer" style="position:relative; left:1200px; top:-260px;">
   <input type="range" min="1" max="750" value="50" class="slider" id="sliderY">
 </div>
 <div class="slidecontainer" style="position:relative; left:200px; top:00px;">

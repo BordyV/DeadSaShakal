@@ -1,7 +1,66 @@
+body {
+    color:black;
+    background-color:white;
+    /* background-image:url("../img/backgroundIndex.svg"); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial;
+    }
+
 canvas {
     border: 2px solid black;
     background-image: url("../img/background1.svg");
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
 }
+
+p {
+    font-size: 20px;
+}
+div#Regles p, h1, h2 {
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #352E54;
+    text-align: center;
+  }
+  
+  li {
+    float: left;
+    background-image: url("../img/mur2.svg");
+    background-repeat: no-repeat;
+    border: 1px solid;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  li a:hover:not(.active) {
+    background-image: url("../img/plateforme.svg");
+    
+  }
+  
+  .active {
+    background-image: url("../img/plateforme.svg");
+  }
+
+  
+
 
 .slidecontainer {
     width: 500px;
