@@ -11,26 +11,16 @@ Il y aura plusieurs niveaux déjà prédéfinis avec des ennemies, des objets in
 Les personnages (ennemies ou non), les objets mais pas les balles seront soumis à la gravité. <br><br>
 
 
-Diferrents livrables:
+Démo:
 <br>
-BORDY:<br>
-
-  -livrable 1:<br>
-    -creation de la physique de la balle.<br>
-    a) trajectoire de la balle<br>
-    b) rebond de la balle<br>
-    c) vitesse de la balle
-
-BIRGER :
-Editeur de map {<br>
-To do : <br>
-Evenement cliquer sur l'écran<br>
-Récupérer les coordonnées<br>
-Instancier un objet à ces coordonnées<br>
-Pouvoir choisir un objet dans une liste et pouvoir le placer à ces coordonnées<br>
-Pouvoir supprimer un objet<br>
-pouvoir modifier plusieurs paramètres(Position, taille, orientation)<br>
-Pouvoir sauvegarder tous ces paramètres dans un fichier (sérialisation)<br>
-et pouvoir les récupérer pour charger la map (désérialisation)<br>
-
-}
+Jeux dans le canvas: <br>
+2 boutons:<br>
+-Jouer:<br>
+Pour jouer il faut cliquer sur le bouton jouer et sélectionner son niveau. Pas encore de retour au niveau et de passage une fois le niveau fait.<br>
+-Editeur:
+Dans l'éditeur vous pouvez sélectionner les objets à placer avec les touches A (mur) - Z (mur) - E (hero) - R (Ennemie)<br>
+Placer les objets avec clique gauche. <br>
+Clique droit supprime l'objet. <br>
+Clique gauche sur un objet placé pour le sélectionner.<br>
+Pour modifier la taille de l'objet sélectionné utiliser le slider de droite pour la hauteur, le slider du bas pour la largeur.<br>
+Pour déplacer un objet déjà placé: Le sélectionner puis cliquer dessus sans relacher le clique et le déplacer avec la souris.<br>
