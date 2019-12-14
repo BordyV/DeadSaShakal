@@ -152,10 +152,11 @@ Le but du jeu est simple vous êtes un hero <img src="img/hero.svg"> et votre bu
 <img width="1000" src="img/Regles/niveau.png"></p>
 <p>
 <b>Attention !</b> les balles sont limités tout comme le nombre de rebonds.</p>
-<h2>L'éditeur de niveau</h2>
+<h2>L'éditeur de niveau : </h2>
 <p>
 
 L'editeur de niveau va vous permettre de créer vos propres niveaux et de les importer.<br>
+<img width="1000" src="img/Regles/editeur.png">
 Voici une liste des actions réalisables avec l'éditeur de niveau: <br>
 -Sélectionner les objets à placer avec les touches <img width ="18"src="img/Regles/a.svg"> (mur) -
 <img width ="18"src="img/Regles/z.svg"> (mur) - 
@@ -163,8 +164,9 @@ Voici une liste des actions réalisables avec l'éditeur de niveau: <br>
 <img width ="18"src="img/Regles/r.svg"> (Ennemie)<br>
 -Placer les objets avec clique gauche. <br>
 -Clique droit supprime l'objet placé. <br>
--Clique gauche sur un objet placé pour le sélectionner.<br>
--Pour modifier la taille de l'objet sélectionné utiliser le slider de droite pour la hauteur, le slider du bas pour la largeur.<br>
+-Clique gauche sur un objet placé pour le sélectionner.<img width="50"src="img/Regles/objSelection.png"> Il devient alors surbrillant.<br>
+-Pour modifier la taille de l'objet sélectionné utiliser le slider de droite pour la hauteur, le slider du bas pour la largeur.
+<img src="img/Regles/slider.png"><br>
 -Pour déplacer un objet déjà placé: Le sélectionner puis cliquer dessus sans relacher le clique et le déplacer avec la souris.<br>
 </p>
 </div>
@@ -176,7 +178,7 @@ Voici une liste des actions réalisables avec l'éditeur de niveau: <br>
 </div> -->
 
 <div id="sliders">
-<div class="slidecontainer" style="position:relative;margin-left:85%; top:-260px;">
+<div class="slidecontainer" style="position:relative;margin-left:80%; top:-260px;">
   <input type="range" min="1" max="750" value="50" class="slider" id="sliderY">
 </div>
 <div class="slidecontainer" style="position:relative; margin-left:40%; top:00px;">
