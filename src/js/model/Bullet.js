@@ -5,8 +5,9 @@ class Bullet {
         this.y = hero.armeY +hero.angle;
         this.angle = hero.angle;
         this.nbRebond = 9;
-        this.dx = 20 * Math.cos(this.angle);
-        this.dy = 20 * Math.sin(this.angle);
+        this.dx = 4* Math.cos(this.angle);
+        this.dy = 4 * Math.sin(this.angle);
+        setInterval(pos, 1,this);
       }
 
     drawObj(ctx) {
@@ -23,51 +24,9 @@ class Bullet {
       ctx.restore();
     }
 
-  
-    moveB(maxX, maxY) {
-      
-
-    if(this.nbRebond >0)
-    {
-        mapActuelle.lesMurs.forEach(m => {
-        
-      if(this.testerCollision(m))
-          {
-            this.GetMurCollision(m);            
-      }
-        
-    });
-        mapActuelle.mechants.map(c => {
-            if(this.testerCollisionMechant(c))
-            {
-
-                c.mort();
-            }
-
-        });
 
 
-      // if(this.x < 10 || this.x > canvas.width -10)
-      // {
-      //   this.nbRebond -= 1;
-      //   this.dx *= -1;
-      //   this.angle *= -1;
-      // }
-      // if(this.y < 10 || this.y > canvas.height -10 )
-      // {
-      //   this.nbRebond -= 1;
-      //   this.dy *= -1;
-      //   this;this.angle *= -1;
-        
-      // }
 
-        this.x -= this.dx;
-        this.y -= this.dy;
-        return true;
-    }  
-    return false;
-  }
-  
   testerCollision(mur) {
     if (((this.x < Math.floor(mur.x) + Math.floor(mur.width)
          && this.x > mur.x)) ) {
@@ -126,5 +85,33 @@ class Bullet {
       return false;
     }
   }
+}
+function pos(balle){
+    if(balle.nbRebond >0)
+    {
+        mapActuelle.lesMurs.forEach(m => {
+
+            if(balle.testerCollision(m))
+            {
+                balle.GetMurCollision(m);
+            }
+
+        });
+        mapActuelle.mechants.map(c => {
+            if(balle.testerCollisionMechant(c))
+            {
+
+                c.mort();
+            }
+
+        });
+
+
+
+        balle.x -= balle.dx;
+        balle.y -= balle.dy;
+
+    }
+
 }
 
