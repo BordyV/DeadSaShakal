@@ -59,10 +59,13 @@ class Hero extends Objet {
         let b = this.bullets[i]; 
         b.drawObj(ctx);
         //if ((b.x < 0) || (b.y < 0) || (b.x > width) || (b.y > height))
-        if (false == b.moveB())
+        if (b.nbRebond == 0)
         {
-          this.removeBullet(b)
+          this.removeBullet(b);
         }
+        if (b.x <0 || b.x >2000 || b.y<-200 || b.y>800)
+            this.removeBullet(b);
+
       }
     }
     
@@ -104,6 +107,9 @@ class Hero extends Objet {
      removeBullet(bullet) {
           let position = this.bullets.indexOf(bullet);
           this.bullets.splice(position, 1);
+          bullet.x = -999;
+          bullet.y = 999;
+
       }
   }
   
