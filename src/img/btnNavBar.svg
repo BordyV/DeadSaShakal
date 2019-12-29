@@ -64,7 +64,7 @@
      id="namedview877"
      showgrid="false"
      inkscape:zoom="2.4377506"
-     inkscape:cx="-23.6087"
+     inkscape:cx="7.4386676"
      inkscape:cy="21.272736"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
@@ -74,12 +74,12 @@
      inkscape:guide-bbox="true"
      inkscape:lockguides="false" />
   <rect
-     style="opacity:1;fill:#d6002b;fill-opacity:1;stroke-width:0.63644797"
+     style="opacity:1;fill:#d6002b;fill-opacity:1;stroke-width:0.75266939"
      id="rect883"
-     width="257.18542"
-     height="156.86386"
+     width="290.823"
+     height="194.00955"
      x="-5.9322147"
-     y="0.48035297" />
+     y="-36.665356" />
   <g
      sodipodi:type="inkscape:box3d"
      id="g902"
@@ -131,8 +131,8 @@
        points="-214.6483,-529.45553 -345.12243,-542.35848 -345.12243,-309.15274 -214.6483,-311.89267 " />
   </g>
   <path
-     style="opacity:1;fill:#b10022;fill-opacity:1;stroke-width:0.63059193"
-     d="M 251.2532,0.48033825 250.09888,-0.3035922 28.405832,156.61556 251.2532,155.82306 Z"
+     style="opacity:1;fill:#b10022;fill-opacity:1;stroke-width:0.73862058"
+     d="M 275.04563,-14.212547 273.59992,-15.071305 -4.05471,156.82602 275.04563,155.95788 Z"
      id="path964"
      inkscape:connector-curvature="0" />
 </svg>
