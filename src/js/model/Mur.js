@@ -23,7 +23,6 @@ class Mur extends Objet{
     }
 
 
-
   }
 
     drawObj(ctx) {

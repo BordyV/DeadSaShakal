@@ -19,7 +19,7 @@ class Map {
             if (map[i].id === 201) {
 
                 this.mapInfo.push(new MurTri(map[i].id, map[i].x, map[i].y, map[i].height, map[i].width));
-                this.lesMurs.push(new MurTri(map[i].id, map[i].x, map[i].y, map[i].height, map[i].width));
+                this.lesMursTri.push(new MurTri(map[i].id, map[i].x, map[i].y, map[i].height, map[i].width));
 
             }
             if (map[i].id === 1) {
