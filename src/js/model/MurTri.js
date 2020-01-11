@@ -24,17 +24,19 @@ class MurTri extends Object {
         ctx.shadowColor = "white";
       }
 
-      ctx.drawImage(this.image, 0, 0,this.width,this.height);
 
       if(this.id == 201)
       {
         ctx.beginPath();
-        ctx.moveTo(this.width, this.height);
-        ctx.lineTo(this.height,-this.height);
-        ctx.lineTo( this.width,-this.width);
+        ctx.moveTo(0, this.height);
+        ctx.lineTo(this.width,this.height);
+        ctx.lineTo( this.width,0);
         ctx.fill();
         }
-      ctx.restore();
+
+      ctx.drawImage(this.image, 0, 0,this.width,this.height);
+
+        ctx.restore();
 
       
 
