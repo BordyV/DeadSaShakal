@@ -5,7 +5,7 @@ var mapActuelle;
 function anime() {
 
 
-    console.log(mapActuelle.leHero.nbBullet);
+    // console.log(mapActuelle.leHero.nbBullet);
     // 1) On efface l'ecran
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 

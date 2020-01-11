@@ -42,30 +42,26 @@ class Bullet {
   GetMurCollision(mur){
 
     if(mur.x - Math.abs(this.dx) < this.x && mur.x +Math.abs(this.dx) > this.x )
-            {
-              console.log("left");
+            {//left
               this.nbRebond -= 1;
               this.dx *= -1;
               this.angle *= -1;
             }
             if(mur.y - Math.abs(this.dy) < this.y && mur.y +Math.abs(this.dy) > this.y )
-            {
-              console.log("top");
+            {//top
               this.nbRebond -= 1;
               this.dy *= -1;
               this.angle *= -1;
             }
 
             if(Math.floor(mur.x) + Math.floor(mur.width)  - Math.abs(this.dx) < this.x && (Math.floor(mur.x) + Math.floor(mur.width) +Math.abs(this.dx) > this.x ))
-            {
-              console.log("right");
+            {//right
               this.nbRebond -= 1;
               this.dx *= -1;
               this.angle *= -1;
             }
             if(Math.floor(mur.y) + Math.floor(mur.height) - Math.abs(this.dy) < this.y &&  (Math.floor(mur.y) + Math.floor(mur.height) +Math.abs(this.dy) > this.y ))
-            {
-              console.log("bot");
+            {//bottom
               this.nbRebond -= 1;
               this.dy *= -1;
               this.angle *= -1;

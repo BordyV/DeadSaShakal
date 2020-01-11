@@ -18,7 +18,6 @@ function menu() {
             if (this.CollisionBouton(b) != null) {
                 if(b.id == 1)
                 {
-                    console.log("dddd");
                     MenuJouer();
                     document.getElementById("sliders").style.display = "none";
 
