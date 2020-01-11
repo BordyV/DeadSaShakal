@@ -3,6 +3,7 @@ class Map {
     constructor(map) {
 
         this.lesMurs = [];
+        this.lesMursTri = [];
         this.mapInfo =[];
         this.mechants = [];
         this.leHero;
@@ -13,6 +14,12 @@ class Map {
 
                 this.mapInfo.push(new Mur(map[i].id, map[i].x, map[i].y, map[i].height, map[i].width));
                 this.lesMurs.push(new Mur(map[i].id, map[i].x, map[i].y, map[i].height, map[i].width));
+
+            }
+            if (map[i].id === 201) {
+
+                this.mapInfo.push(new MurTri(map[i].id, map[i].x, map[i].y, map[i].height, map[i].width));
+                this.lesMurs.push(new MurTri(map[i].id, map[i].x, map[i].y, map[i].height, map[i].width));
 
             }
             if (map[i].id === 1) {

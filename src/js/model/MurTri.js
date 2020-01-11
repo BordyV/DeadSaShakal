@@ -1,4 +1,4 @@
-class TriangleRect extends Object {
+class MurTri extends Object {
     constructor(id, x,y, height, width) {
 
 
@@ -10,7 +10,6 @@ class TriangleRect extends Object {
       {
       this.image = document.getElementById("angle1");
       }
-
   }
 
     drawObj(ctx) {
@@ -31,12 +30,10 @@ class TriangleRect extends Object {
           ctx.lineTo(0, this.height);
           ctx.fill();
       }
-
       ctx.drawImage(this.image, 0, 0,this.width,this.height);
       
 
 
       ctx.restore();
   }
-    }
 }
