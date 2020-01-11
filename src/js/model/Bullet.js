@@ -68,6 +68,49 @@ class Bullet {
             }
   }
 
+  // testerCollisionTri(murTri) {
+  //   if (((this.x < 0
+  //        && this.x >this.width)) ) {
+  //         if (((this.y < Math.floor(murTri.y) + Math.floor(murTri.height)
+  //           && this.y > murTri.y)))
+  //           {
+  //          return true;
+              
+  //         }
+  //   } 
+  //     return false;
+  // }
+
+  GetMurTriCollision(murTri){
+
+    if(murTri.x - Math.abs(this.dx) < this.x && murTri.x +Math.abs(this.dx) > this.x )
+            {//left
+              this.nbRebond -= 1;
+              this.dx *= -1;
+              this.angle *= -1;
+            }
+            if(murTri.y - Math.abs(this.dy) < this.y && murTri.y +Math.abs(this.dy) > this.y )
+            {//top
+              this.nbRebond -= 1;
+              this.dy *= -1;
+              this.angle *= -1;
+            }
+
+            if(Math.floor(murTri.x) + Math.floor(murTri.width)  - Math.abs(this.dx) < this.x && (Math.floor(murTri.x) + Math.floor(murTri.width) +Math.abs(this.dx) > this.x ))
+            {//right
+              this.nbRebond -= 1;
+              this.dx *= -1;
+              this.angle *= -1;
+            }
+            if(Math.floor(murTri.y) + Math.floor(murTri.height) - Math.abs(this.dy) < this.y &&  (Math.floor(murTri.y) + Math.floor(murTri.height) +Math.abs(this.dy) > this.y ))
+            {//bottom
+              this.nbRebond -= 1;
+              this.dy *= -1;
+              this.angle *= -1;
+            }
+  }
+
+
   testerCollisionMechant(mechant) {
 
     if ( !(this.x > Math.floor(mechant.x) + Math.floor(mechant.width)
@@ -93,6 +136,16 @@ function pos(balle){
             }
 
         });
+
+        mapActuelle.lesMursTri.forEach(mt => {
+
+          if(balle.testerCollision(mt))
+          {
+              balle.GetMurTriCollision(mt);
+          }
+
+      });
+
         mapActuelle.mechants.map(c => {
             if(balle.testerCollisionMechant(c))
             {

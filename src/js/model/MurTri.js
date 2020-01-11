@@ -8,6 +8,9 @@ class MurTri extends Object {
       this.y=y;
       this.width = width;
       this.height = height;
+      this.p1;
+      this.p2;
+      this.p3;
       if(this.id == 201)
       {
       this.image = document.getElementById("angle1");
@@ -27,6 +30,10 @@ class MurTri extends Object {
 
       if(this.id == 201)
       {
+        this.p1 = [0, this.height];
+        this.p2 = [this.width, this.height];
+        this.p3  = [this.width, 0];
+
         ctx.beginPath();
         ctx.moveTo(0, this.height);
         ctx.lineTo(this.width,this.height);
