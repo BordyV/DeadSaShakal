@@ -194,9 +194,9 @@ function MenuJouer() {
     let niveau6 = {x:770,y:100,w:100,h:100,id:106};
     let niveau7 = {x:920,y:100,w:100,h:100,id:107};
     let niveau8 = {x:1070,y:100,w:100,h:100,id:108};
-    let niveau9 = {x: 170, y: 300 ,w:100,h:100,id:109};
-    let niveau10 = {x: 320, y: 300 ,w:100,h:100,id:110};
-    let niveau11 = {x: 470, y: 300 ,w:100,h:100,id:111};
+    let niveau9 = {x: 20, y: 300 ,w:100,h:100,id:109};
+    let niveau10 = {x: 170, y: 300 ,w:100,h:100,id:110};
+    let niveau11 = {x: 320, y: 300 ,w:100,h:100,id:111};
     ctx.save();
     ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
