@@ -16,10 +16,10 @@ class MurDestroy extends Mur{
 
     detruit()
     {
-        this.degats -= 1 ;
+
         mapActuelle.mapInfo.map(c => {
-           if(c.degats == 0)
-                mapActuelle.mapInfo.splice( mapActuelle.mapInfo.indexOf(this),1);
+           if(c.degats == 1)
+                mapActuelle.mapInfo.splice( mapActuelle.mapInfo.indexOf(c),1);
         });
         
         mapActuelle.lesMursDestroy.splice( mapActuelle.lesMursDestroy.indexOf(this), 1);
