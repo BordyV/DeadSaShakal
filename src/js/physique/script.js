@@ -59,6 +59,7 @@ function anime(callback) {
         ctx.fillStyle = '#00001a';
         ctx.globalAlpha = 0.6;
         ctx.fillRect(5, 5, 100, 60);
+        ctx.fillRect(580, 5, 130, 60);
         ctx.globalAlpha = 1;
         ctx.font = "900 24px Charcoal";
         ctx.fillStyle = ' #e60000';
