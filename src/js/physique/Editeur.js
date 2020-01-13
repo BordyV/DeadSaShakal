@@ -68,6 +68,9 @@ function inita() {
                         case 102:
                             mapTemp.push(new Mur(objTemp.id, objTemp.x, objTemp.y, objTemp.height, objTemp.width));
                             break;
+                        case 201:
+                            mapTemp.push(new MurDestroy(objTemp.id, objTemp.x, objTemp.y, objTemp.height, objTemp.width, objTemp.degats));
+                            break;
                         case 1:
                             mapTemp.push(new Hero(objTemp.id, objTemp.x, objTemp.y, objTemp.angle, objTemp.v, objTemp.nbBullet, objTemp.delayMinBetweenBullets, objTemp.height, objTemp.width));
                             break;
@@ -118,7 +121,11 @@ function inita() {
             objetSelectione = 101;
 
         }
+        if (evt.keyCode === 84) { // 1
+            objTemp = new MurDestroy(201, mousepos.x,mousepos.y,100,100);
+            objetSelectione = 201;
 
+        }
         if (evt.keyCode === 90) { // 1
             objTemp = new Mur(102, mousepos.x,mousepos.y,100,100);
             objetSelectione = 102;
@@ -151,6 +158,10 @@ function inita() {
                 if (mapLoad[i].id === 101 || mapLoad[i].id === 102 )
                 {
                     mapTemp.push(new Mur(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height, mapLoad[i].width));
+                }
+                if (mapLoad[i].id === 201 )
+                {
+                    mapTemp.push(new MurDestroy(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height, mapLoad[i].width, mapload[i].degats));
                 }
                 if (mapLoad[i].id === 1)
                 {
