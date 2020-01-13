@@ -25,6 +25,7 @@ class Hero extends Objet {
       this.armeWidth = this.arme.width;
       this.armeHeight = this.arme.height;
         this.moveM(mousepos);
+
     }
     
     drawObj(ctx) {
@@ -107,9 +108,22 @@ class Hero extends Objet {
      removeBullet(bullet) {
           let position = this.bullets.indexOf(bullet);
           this.bullets.splice(position, 1);
-          bullet.x = -999;
-          bullet.y = 999;
 
       }
+      removeAllBullets(){
+
+
+          this.bullets.map(c => {
+             this.removeBullet(c);
+
+          });
+      }
+
+  }
+  function pos(){
+      mapActuelle.leHero.bullets.map(c => {
+          c.pos();
+
+      });
   }
   

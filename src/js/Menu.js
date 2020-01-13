@@ -5,82 +5,155 @@ var boutons=[];
 var btnJouer = {};
 var btnEditeur = {};
 var niveau1 = {}
+var mapname;
 function menu() {
 
-    canvas = document.querySelector("#myCanvas");
-    ctx = canvas.getContext('2d');
-    width = canvas.width;
-    height = canvas.height;
+inputStates = {};
+ boutons=[];
+ btnJouer = {};
+btnEditeur = {};
+ niveau1 = {}
+ nbMechant =1;
 
-    window.addEventListener('click', function(evt) {
-        boutons.forEach(b => {
+    if(canvas == null) {
+        mapActuelle = new Map(map1);
+        setInterval("pos()",1);
+        canvas = document.querySelector("#myCanvas");
+        ctx = canvas.getContext('2d');
+        width = canvas.width;
+        height = canvas.height;
+        canvas.addEventListener('click', function (evt) {
+            if (mapActuelle.leHero != null)
+            mapActuelle.leHero.addBullet(Date.now());
 
-            if (this.CollisionBouton(b) != null) {
-                if(b.id == 1)
-                {
-                    console.log("dddd");
-                    MenuJouer();
-                    document.getElementById("sliders").style.display = "none";
+        });
+        window.addEventListener('click', function (evt) {
+            boutons.forEach(b => {
 
-                }
-                if(b.id == 2)
-                {
-                    boutons=[];
-                    inita();
-                   ctx.canvas =  Loii();
-                  
-                   document.getElementById("sliders").style.display = "unset";
+                if (this.CollisionBouton(b) != null) {
+                    if (b.id == 1) {
+                        MenuJouer();
+                        document.getElementById("sliders").style.display = "none";
+
+                    }
+                    if (b.id == 2) {
+                        boutons = [];
+                        inita();
+                        ctx.canvas = Loii();
+
+                        document.getElementById("sliders").style.display = "unset";
 
 
-                }
-                if(b.id == 101)
-                {
-                    canvas.addEventListener('click', function (evt) {
+                    }
+                    if (b.id == 101) {
 
-                        mapActuelle.leHero.addBullet(Date.now());
+                        ctx = canvas.getContext('2d');
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        boutons = [];
+                        mapActuelle = new Map(map1);
+                        mapname = map1;
+                        anime();
+                    }
+                    if (b.id == 102) {
 
-                    });
+                        ctx = canvas.getContext('2d');
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        boutons = [];
+                        mapActuelle = new Map(map2);
+                        mapname = map2;
+                        anime();
+                    }
+                    if (b.id == 103) {
+
+                        ctx = canvas.getContext('2d');
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        boutons = [];
+                        mapActuelle = new Map(map3);
+                        mapname = map3;
+                        anime();
+                    }
+                if (b.id == 104) {
                     ctx = canvas.getContext('2d');
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    boutons=[];
-                    mapActuelle = new Map(map1);
-                   anime();
-                }
-                if(b.id == 102)
-                {
-                    canvas.addEventListener('click', function (evt) {
-
-                        mapActuelle.leHero.addBullet(Date.now());
-
-                    });
-                    ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    boutons=[];
-                    mapActuelle = new Map(map2);
+                    boutons = [];
+                    mapActuelle = new Map(map4);
+                    mapname = map4;
                     anime();
                 }
-                if(b.id == 103)
-                {
-                    canvas.addEventListener('click', function (evt) {
+                if (b.id == 105) {
 
-                        mapActuelle.leHero.addBullet(Date.now());
-
-                    });
                     ctx = canvas.getContext('2d');
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    boutons=[];
-                    mapActuelle = new Map(map3);
+                    boutons = [];
+                    mapActuelle = new Map(map5);
+                    mapname = map5;
                     anime();
                 }
-            }
-        })
+                if (b.id == 106) {
 
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map6);
+                    mapname = map6;
+                    anime();
+                }
+                if (b.id == 107) {
 
-    });
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map7);
+                    mapname = map7;
+                    anime();
+                }
+                if (b.id == 108) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map8);
+                    mapname = map8;
+                    anime();
+                }
+                if (b.id == 109) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(mapdemo);
+                    mapname = mapdemo;
+                    anime();
+                }
+                if (b.id == 110) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map10);
+                    mapname = map10;
+                    anime();
+                }
+                if (b.id == 111) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map11);
+                    mapname = map11;
+                    anime();
+                }
+                }
+            })
+
+            buttonMenu();
+        });
+
     canvas.addEventListener('mousemove', function (evt) {
         mousepos = getMousePos(canvas, evt);
     }, false);
-
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     btnJouer = { x: (canvas.width/2)-400/2, y: 300 ,w:400,h:100,id:1};
     btnEditeur = { x: (canvas.width/2)-400/2, y: 500 ,w:400,h:100,id:2};
     boutons.push(btnJouer);
@@ -112,8 +185,18 @@ function menu() {
 
 
 function MenuJouer() {
+    quitter = false;
+    nbMechant =1;
     let niveau2 = { x: 170, y: 100 ,w:100,h:100,id:102};
     let niveau3 = { x: 320, y: 100 ,w:100,h:100,id:103};
+    let niveau4 = { x:470,y:100,w:100,h:100,id:104};
+    let niveau5 = {x:620,y:100,w:100,h:100,id:105};
+    let niveau6 = {x:770,y:100,w:100,h:100,id:106};
+    let niveau7 = {x:920,y:100,w:100,h:100,id:107};
+    let niveau8 = {x:1070,y:100,w:100,h:100,id:108};
+    let niveau9 = {x: 20, y: 300 ,w:100,h:100,id:109};
+    let niveau10 = {x: 170, y: 300 ,w:100,h:100,id:110};
+    let niveau11 = {x: 320, y: 300 ,w:100,h:100,id:111};
     ctx.save();
     ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -122,11 +205,41 @@ function MenuJouer() {
     boutons.push(niveau1);
     boutons.push(niveau2);
     boutons.push(niveau3);
+    boutons.push(niveau4);
+    boutons.push(niveau5);
+    boutons.push(niveau6);
+    boutons.push(niveau7);
+    boutons.push(niveau8);
+    boutons.push(niveau9);
+    boutons.push(niveau10);
+    boutons.push(niveau11);
+
     ctx.fillStyle = '#00001a';
     ctx.globalAlpha = 0.6;
     ctx.fillRect(20,100,100,100);
     ctx.fillRect(170,100,100,100);
     ctx.fillRect(320,100,100,100);
+    ctx.fillRect(470,100,100,100);
+    ctx.fillRect(620,100,100,100);
+    ctx.fillRect(770,100,100,100);
+    ctx.fillRect(920,100,100,100);
+    ctx.fillRect(1070,100,100,100);
+    ctx.fillRect(20,300,100,100);
+    ctx.fillRect(170,300,100,100);
+    ctx.fillRect(320,300,100,100);
+    ctx.fillRect(470,300,100,100);
+    ctx.fillRect(620,300,100,100);
+    ctx.fillRect(770,300,100,100);
+    ctx.fillRect(920,300,100,100);
+    ctx.fillRect(1070,300,100,100);
+    ctx.fillRect(20,500,100,100);
+    ctx.fillRect(170,500,100,100);
+    ctx.fillRect(320,500,100,100);
+    ctx.fillRect(470,500,100,100);
+    ctx.fillRect(620,500,100,100);
+    ctx.fillRect(770,500,100,100);
+    ctx.fillRect(920,500,100,100);
+    ctx.fillRect(1070,500,100,100);
     ctx.globalAlpha = 1;
     ctx.font = "900 60px Charcoal";
     ctx.fillStyle = ' #e60000';
@@ -134,6 +247,19 @@ function MenuJouer() {
     ctx.fillText("1", 55, 170);
     ctx.fillText("2", 205, 170);
     ctx.fillText("3", 355, 170);
+    ctx.fillText("4", 505, 170);
+    ctx.fillText("5", 655, 170);
+    ctx.fillText("6", 805, 170);
+    ctx.fillText("7", 955, 170);
+    ctx.fillText("8", 1105, 170);
+     ctx.fillText("demo", 0, 370);
+     ctx.fillText("10", 205-10, 370);
+     ctx.fillText("11", 355-10, 370);
+    // ctx.fillText("12", 505-10, 370);
+    // ctx.fillText("13", 655-10, 370);
+    // ctx.fillText("14", 805-10, 370);
+    // ctx.fillText("15", 955-10, 370);
+    //ctx.fillText("DEMO", 1105, 370);
     ctx.restore();
 
 

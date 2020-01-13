@@ -7,7 +7,7 @@ class Bullet {
         this.nbRebond = 9;
         this.dx = 4* Math.cos(this.angle);
         this.dy = 4 * Math.sin(this.angle);
-        setInterval(pos, 1,this);
+
       }
 
     drawObj(ctx) {
@@ -42,37 +42,115 @@ class Bullet {
   GetMurCollision(mur){
 
     if(mur.x - Math.abs(this.dx) < this.x && mur.x +Math.abs(this.dx) > this.x )
-            {
-              console.log("left");
+            {//left
               this.nbRebond -= 1;
               this.dx *= -1;
               this.angle *= -1;
             }
             if(mur.y - Math.abs(this.dy) < this.y && mur.y +Math.abs(this.dy) > this.y )
-            {
-              console.log("top");
+            {//top
               this.nbRebond -= 1;
               this.dy *= -1;
               this.angle *= -1;
             }
 
             if(Math.floor(mur.x) + Math.floor(mur.width)  - Math.abs(this.dx) < this.x && (Math.floor(mur.x) + Math.floor(mur.width) +Math.abs(this.dx) > this.x ))
-            {
-              console.log("right");
+            {//right
               this.nbRebond -= 1;
               this.dx *= -1;
               this.angle *= -1;
             }
             if(Math.floor(mur.y) + Math.floor(mur.height) - Math.abs(this.dy) < this.y &&  (Math.floor(mur.y) + Math.floor(mur.height) +Math.abs(this.dy) > this.y ))
+            {//bottom
+              this.nbRebond -= 1;
+              this.dy *= -1;
+              this.angle *= -1;
+            }
+  }
+  testerCollisionDes(mur) {
+    if (((this.x < Math.floor(mur.x) + Math.floor(mur.width)
+         && this.x > mur.x)) ) {
+          if (((this.y < Math.floor(mur.y) + Math.floor(mur.height)
+            && this.y > mur.y)))
             {
-              console.log("bot");
+           return true;
+              
+          }
+    } 
+      return false;
+  }
+  GetMurCollisionDes(murDes){
+
+    if(murDes.x - Math.abs(this.dx) < this.x && murDes.x +Math.abs(this.dx) > this.x )
+            {//left
+              this.nbRebond -= 1;
+              this.dx *= -1;
+              this.angle *= -1;
+            }
+            if(murDes.y - Math.abs(this.dy) < this.y && murDes.y +Math.abs(this.dy) > this.y )
+            {//top
+              this.nbRebond -= 1;
+              this.dy *= -1;
+              this.angle *= -1;
+            }
+
+            if(Math.floor(murDes.x) + Math.floor(murDes.width)  - Math.abs(this.dx) < this.x && (Math.floor(murDes.x) + Math.floor(murDes.width) +Math.abs(this.dx) > this.x ))
+            {//right
+              this.nbRebond -= 1;
+              this.dx *= -1;
+              this.angle *= -1;
+            }
+            if(Math.floor(murDes.y) + Math.floor(murDes.height) - Math.abs(this.dy) < this.y &&  (Math.floor(murDes.y) + Math.floor(murDes.height) +Math.abs(this.dy) > this.y ))
+            {//bottom
               this.nbRebond -= 1;
               this.dy *= -1;
               this.angle *= -1;
             }
   }
 
-  testerCollisionMechant(mechant) {
+    pos(){
+
+        if(this.nbRebond >0)
+        {
+            mapActuelle.lesMurs.forEach(m => {
+
+                if(this.testerCollision(m))
+                {
+                    this.GetMurCollision(m);
+                }
+
+            });
+
+            mapActuelle.lesMursDestroy.forEach(md => {
+
+                if(this.testerCollisionDes(md))
+                {
+                    this.GetMurCollisionDes(md);
+                    md.detruit();
+                }
+
+            });
+
+            mapActuelle.mechants.map(c => {
+                if(this.testerCollisionMechant(c))
+                {
+
+                    c.mort();
+                }
+
+            });
+
+
+
+            this.x -= this.dx;
+            this.y -= this.dy;
+
+        }
+
+    }
+
+
+    testerCollisionMechant(mechant) {
 
     if ( !(this.x > Math.floor(mechant.x) + Math.floor(mechant.width)
          || this.x < mechant.x
@@ -86,32 +164,3 @@ class Bullet {
     }
   }
 }
-function pos(balle){
-    if(balle.nbRebond >0)
-    {
-        mapActuelle.lesMurs.forEach(m => {
-
-            if(balle.testerCollision(m))
-            {
-                balle.GetMurCollision(m);
-            }
-
-        });
-        mapActuelle.mechants.map(c => {
-            if(balle.testerCollisionMechant(c))
-            {
-
-                c.mort();
-            }
-
-        });
-
-
-
-        balle.x -= balle.dx;
-        balle.y -= balle.dy;
-
-    }
-
-}
-

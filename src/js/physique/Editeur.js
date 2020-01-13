@@ -12,6 +12,7 @@ var theObj;
 let sliderY;
 let sliderX;
 var map;
+var test = false;
 
 window.onloadend = Loii();
 
@@ -31,7 +32,7 @@ function inita() {
 
     objTemp = new Mur(101, 100,100,100,100);
 
-    canvas.addEventListener('mousemove', function (evt) {
+    window.addEventListener('mousemove', function (evt) {
         mousepos = getMousePos(canvas, evt);
     }, false);
 
@@ -40,55 +41,56 @@ function inita() {
         return false;
     }, false);
     window.addEventListener('mouseup', function (evt) {
+        if (mousepos.x>0 && mousepos.y>0 && mousepos.y < canvas.height && mousepos.x < canvas.width && !test) {
+            if (evt.button === 0) {
+                touche = false;
+                if (theObj != null)
+                    theObj.surbrillance = false;
+                mapTemp.forEach(m => {
 
-        if(evt.button === 0) {
-            touche = false;
-            if(theObj !=null)
-            theObj.surbrillance = false;
-            mapTemp.forEach(m => {
-
-                if (this.GetCollision(m)) {
+                    if (this.GetCollision(m)) {
+                        touche = true;
+                        objTemp = new Mur(-1, 0, 0, 0, 0);
+                        sliderY.value = m.height;
+                        sliderX.value = m.width;
+                        ModifTaille(m);
+                        theObj = m;
+                        theObj.surbrillance = true;
+                    }
+                })
+                if (mousepos.x > 1275 || mousepos.y > 710)
                     touche = true;
-                    objTemp = new Mur(-1, 0,0,0,0);
-                    sliderY.value = m.height;
-                    sliderX.value = m.width;
-                    ModifTaille(m);
-                    theObj= m;
-                    theObj.surbrillance = true;
-                }
-            })
-            if(mousepos.x>1275 || mousepos.y>710)
-                touche = true;
-            if(!touche)
-            switch (objetSelectione) {
-                case 101:
-                    mapTemp.push(new Mur(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
-                    break;
-                case 102:
-                    mapTemp.push(new Mur(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
-                    break;
-                case 1:
-                    mapTemp.push(new Hero(objTemp.id,objTemp.x, objTemp.y,objTemp.angle,objTemp.v,objTemp.nbBullet,objTemp.delayMinBetweenBullets, objTemp.height, objTemp.width));
-                    break;
-                case 2:
-                    mapTemp.push(new Mechant(objTemp.id,objTemp.x, objTemp.y, objTemp.height, objTemp.width));
+                if (!touche)
+                    switch (objetSelectione) {
+                        case 101:
+                            mapTemp.push(new Mur(objTemp.id, objTemp.x, objTemp.y, objTemp.height, objTemp.width));
+                            break;
+                        case 102:
+                            mapTemp.push(new Mur(objTemp.id, objTemp.x, objTemp.y, objTemp.height, objTemp.width));
+                            break;
+                        case 201:
+                            mapTemp.push(new MurDestroy(objTemp.id, objTemp.x, objTemp.y, objTemp.height, objTemp.width, objTemp.degats));
+                            break;
+                        case 1:
+                            mapTemp.push(new Hero(objTemp.id, objTemp.x, objTemp.y, objTemp.angle, objTemp.v, objTemp.nbBullet, objTemp.delayMinBetweenBullets, objTemp.height, objTemp.width));
+                            break;
+                        case 2:
+                            mapTemp.push(new Mechant(objTemp.id, objTemp.x, objTemp.y, objTemp.height, objTemp.width));
 
 
+                    }
+                objTemp = new Mur(101, mousepos.x, mousepos.y, 100, 100);
+                objetSelectione = 101;
+                //console.log("objet: " + mapTemp);
+
+            } else if (evt.button === 2) {
+                mapTemp.forEach(m => {
+
+                    if (this.GetCollision(m)) {
+                        mapTemp.splice(mapTemp.indexOf(m), 1);
+                    }
+                })
             }
-            objTemp= new Mur(101, mousepos.x,mousepos.y,100,100);
-            objetSelectione =101;
-            console.log("objet: " + mapTemp);
-
-        }
-
-       else if(evt.button ===2)
-        {
-            mapTemp.forEach(m => {
-
-                if (this.GetCollision(m)) {
-                    mapTemp.splice(mapTemp.indexOf(m),1);
-                }
-            })
         }
     });
     window.addEventListener('mousedown', function (evt) {
@@ -119,7 +121,11 @@ function inita() {
             objetSelectione = 101;
 
         }
+        if (evt.keyCode === 84) { // 1
+            objTemp = new MurDestroy(201, mousepos.x,mousepos.y,100,100);
+            objetSelectione = 201;
 
+        }
         if (evt.keyCode === 90) { // 1
             objTemp = new Mur(102, mousepos.x,mousepos.y,100,100);
             objetSelectione = 102;
@@ -135,7 +141,7 @@ function inita() {
             objetSelectione = 2;
             //   console.log("Oui"+evt.keyCode);
         }
-        if (evt.keyCode === 88) {
+        if (evt.keyCode === 83) {
             download(JSON.stringify(mapTemp), 'map.json', 'text/plain');
         }
 
@@ -145,13 +151,17 @@ function inita() {
 
 
             mapLoad = map1;
-            console.log(mapLoad);
+            //console.log(mapLoad);
             mapTemp =[];
             for (i in mapLoad)
             {
                 if (mapLoad[i].id === 101 || mapLoad[i].id === 102 )
                 {
                     mapTemp.push(new Mur(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height, mapLoad[i].width));
+                }
+                if (mapLoad[i].id === 201 )
+                {
+                    mapTemp.push(new MurDestroy(mapLoad[i].id,mapLoad[i].x, mapLoad[i].y, mapLoad[i].height, mapLoad[i].width, mapload[i].degats));
                 }
                 if (mapLoad[i].id === 1)
                 {
@@ -163,6 +173,14 @@ function inita() {
                 }
 
                     }
+        }
+        if (evt.keyCode === 80) {
+            test = !test;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            mapActuelle = new Map(mapTemp);
+            if(test)
+            animeEditor();
         }
 
         switch (evt.keyCode) {
