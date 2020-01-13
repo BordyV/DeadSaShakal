@@ -40,7 +40,7 @@ function testeCollisionsSourisAutresRectangles() {
   // on parcourt les cercles
   rects.forEach(r => {
     if(bullRectsOverlap(r.x, r.y, r.width, r.height, mousePos.x, mousePos.y, 10)) {
-      console.log("collision");
+      //console.log("collision");
       r.color = "green";
       //rects.splice(rects.indexOf(r), 1);
     } 

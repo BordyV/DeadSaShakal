@@ -5,7 +5,6 @@ class Mechant extends Objet {
         this.image = document.getElementById("mechant");
         this.height =this.image.height;
         this.width = this.image.width;
-
         }
 
     drawObj(ctx) {
@@ -23,8 +22,9 @@ class Mechant extends Objet {
     }
     mort()
     {
+
         mapActuelle.mechants.splice( mapActuelle.mechants.indexOf(this), 1);
-         console.log("mort");
+         //console.log("mort");
 
     }
 }

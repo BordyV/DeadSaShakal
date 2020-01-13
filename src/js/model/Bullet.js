@@ -7,7 +7,7 @@ class Bullet {
         this.nbRebond = 9;
         this.dx = 4* Math.cos(this.angle);
         this.dy = 4 * Math.sin(this.angle);
-        setInterval(pos, 1,this);
+
       }
 
     drawObj(ctx) {
@@ -110,8 +110,48 @@ class Bullet {
             }
   }
 
+    pos(){
 
-  testerCollisionMechant(mechant) {
+        if(this.nbRebond >0)
+        {
+            mapActuelle.lesMurs.forEach(m => {
+
+                if(this.testerCollision(m))
+                {
+                    this.GetMurCollision(m);
+                }
+
+            });
+
+            mapActuelle.lesMursTri.forEach(mt => {
+
+                if(this.testerCollision(mt))
+                {
+                    this.GetMurTriCollision(mt);
+                }
+
+            });
+
+            mapActuelle.mechants.map(c => {
+                if(this.testerCollisionMechant(c))
+                {
+
+                    c.mort();
+                }
+
+            });
+
+
+
+            this.x -= this.dx;
+            this.y -= this.dy;
+
+        }
+
+    }
+
+
+    testerCollisionMechant(mechant) {
 
     if ( !(this.x > Math.floor(mechant.x) + Math.floor(mechant.width)
          || this.x < mechant.x
@@ -125,42 +165,3 @@ class Bullet {
     }
   }
 }
-function pos(balle){
-    if(balle.nbRebond >0)
-    {
-        mapActuelle.lesMurs.forEach(m => {
-
-            if(balle.testerCollision(m))
-            {
-                balle.GetMurCollision(m);
-            }
-
-        });
-
-        mapActuelle.lesMursTri.forEach(mt => {
-
-          if(balle.testerCollision(mt))
-          {
-              balle.GetMurTriCollision(mt);
-          }
-
-      });
-
-        mapActuelle.mechants.map(c => {
-            if(balle.testerCollisionMechant(c))
-            {
-
-                c.mort();
-            }
-
-        });
-
-
-
-        balle.x -= balle.dx;
-        balle.y -= balle.dy;
-
-    }
-
-}
-

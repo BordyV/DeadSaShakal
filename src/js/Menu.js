@@ -5,81 +5,84 @@ var boutons=[];
 var btnJouer = {};
 var btnEditeur = {};
 var niveau1 = {}
+var mapname;
 function menu() {
 
-    canvas = document.querySelector("#myCanvas");
-    ctx = canvas.getContext('2d');
-    width = canvas.width;
-    height = canvas.height;
+inputStates = {};
+ boutons=[];
+ btnJouer = {};
+btnEditeur = {};
+ niveau1 = {}
+ nbMechant =1;
 
-    window.addEventListener('click', function(evt) {
-        boutons.forEach(b => {
+    if(canvas == null) {
+        mapActuelle = new Map(map1);
+        setInterval("pos()",1);
+        canvas = document.querySelector("#myCanvas");
+        ctx = canvas.getContext('2d');
+        width = canvas.width;
+        height = canvas.height;
+        canvas.addEventListener('click', function (evt) {
+            if (mapActuelle.leHero != null)
+            mapActuelle.leHero.addBullet(Date.now());
 
-            if (this.CollisionBouton(b) != null) {
-                if(b.id == 1)
-                {
-                    MenuJouer();
-                    document.getElementById("sliders").style.display = "none";
+        });
+        window.addEventListener('click', function (evt) {
+            boutons.forEach(b => {
 
+                if (this.CollisionBouton(b) != null) {
+                    if (b.id == 1) {
+                        MenuJouer();
+                        document.getElementById("sliders").style.display = "none";
+
+                    }
+                    if (b.id == 2) {
+                        boutons = [];
+                        inita();
+                        ctx.canvas = Loii();
+
+                        document.getElementById("sliders").style.display = "unset";
+
+
+                    }
+                    if (b.id == 101) {
+
+                        ctx = canvas.getContext('2d');
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        boutons = [];
+                        mapActuelle = new Map(map1);
+                        mapname = map1;
+                        anime();
+                    }
+                    if (b.id == 102) {
+
+                        ctx = canvas.getContext('2d');
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        boutons = [];
+                        mapActuelle = new Map(map2);
+                        mapname = map2;
+                        anime();
+                    }
+                    if (b.id == 103) {
+
+                        ctx = canvas.getContext('2d');
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        boutons = [];
+                        mapActuelle = new Map(map3);
+                        mapname = map3;
+                        anime();
+                    }
                 }
-                if(b.id == 2)
-                {
-                    boutons=[];
-                    inita();
-                   ctx.canvas =  Loii();
-                  
-                   document.getElementById("sliders").style.display = "unset";
+            })
 
+            buttonMenu();
+        });
 
-                }
-                if(b.id == 101)
-                {
-                    canvas.addEventListener('click', function (evt) {
-
-                        mapActuelle.leHero.addBullet(Date.now());
-
-                    });
-                    ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    boutons=[];
-                    mapActuelle = new Map(map1);
-                   anime();
-                }
-                if(b.id == 102)
-                {
-                    canvas.addEventListener('click', function (evt) {
-
-                        mapActuelle.leHero.addBullet(Date.now());
-
-                    });
-                    ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    boutons=[];
-                    mapActuelle = new Map(map2);
-                    anime();
-                }
-                if(b.id == 103)
-                {
-                    canvas.addEventListener('click', function (evt) {
-
-                        mapActuelle.leHero.addBullet(Date.now());
-
-                    });
-                    ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    boutons=[];
-                    mapActuelle = new Map(map3);
-                    anime();
-                }
-            }
-        })
-
-
-    });
     canvas.addEventListener('mousemove', function (evt) {
         mousepos = getMousePos(canvas, evt);
     }, false);
-
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     btnJouer = { x: (canvas.width/2)-400/2, y: 300 ,w:400,h:100,id:1};
     btnEditeur = { x: (canvas.width/2)-400/2, y: 500 ,w:400,h:100,id:2};
     boutons.push(btnJouer);
@@ -111,6 +114,8 @@ function menu() {
 
 
 function MenuJouer() {
+    quitter = false;
+    nbMechant =1;
     let niveau2 = { x: 170, y: 100 ,w:100,h:100,id:102};
     let niveau3 = { x: 320, y: 100 ,w:100,h:100,id:103};
     ctx.save();
