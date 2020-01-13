@@ -5,7 +5,7 @@ class MurDestroy extends Mur{
       this.id=id;
       this.width = width;
       this.height = height;
-      this.degats = degats;
+      this.degats = 1;
 
       if(this.id == 201)
       {
@@ -16,9 +16,15 @@ class MurDestroy extends Mur{
 
     detruit()
     {
-        console.log(mapActuelle.lesMursDestroy.indexOf(this));
-        mapActuelle.MurDestroy.splice( mapActuelle.lesMursDestroy.indexOf(this), 1);
-         console.log("mort");
+        this.degats -= 1 ;
+        mapActuelle.mapInfo.map(c => {
+           if(c.degats == 0)
+                mapActuelle.mapInfo.splice( mapActuelle.mapInfo.indexOf(this),1);
+        });
+        
+        mapActuelle.lesMursDestroy.splice( mapActuelle.lesMursDestroy.indexOf(this), 1);
+        
+         console.log("detruit");
 
     }
 }
