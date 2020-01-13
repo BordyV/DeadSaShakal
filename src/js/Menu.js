@@ -125,6 +125,24 @@ btnEditeur = {};
                     mapname = mapdemo;
                     anime();
                 }
+                if (b.id == 110) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(110);
+                    mapname = 110;
+                    anime();
+                }
+                if (b.id == 111) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(111);
+                    mapname = 111;
+                    anime();
+                }
                 }
             })
 
@@ -177,6 +195,8 @@ function MenuJouer() {
     let niveau7 = {x:920,y:100,w:100,h:100,id:107};
     let niveau8 = {x:1070,y:100,w:100,h:100,id:108};
     let niveau9 = {x: 170, y: 300 ,w:100,h:100,id:109};
+    let niveau10 = {x: 320, y: 300 ,w:100,h:100,id:110};
+    let niveau11 = {x: 470, y: 300 ,w:100,h:100,id:111};
     ctx.save();
     ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -191,6 +211,8 @@ function MenuJouer() {
     boutons.push(niveau7);
     boutons.push(niveau8);
     boutons.push(niveau9);
+    boutons.push(niveau10);
+    boutons.push(niveau11);
 
     ctx.fillStyle = '#00001a';
     ctx.globalAlpha = 0.6;
@@ -231,8 +253,8 @@ function MenuJouer() {
     ctx.fillText("7", 955, 170);
     ctx.fillText("8", 1105, 170);
      ctx.fillText("demo", 0, 370);
-    // ctx.fillText("10", 205-10, 370);
-    // ctx.fillText("11", 355-10, 370);
+     ctx.fillText("10", 205-10, 370);
+     ctx.fillText("11", 355-10, 370);
     // ctx.fillText("12", 505-10, 370);
     // ctx.fillText("13", 655-10, 370);
     // ctx.fillText("14", 805-10, 370);
