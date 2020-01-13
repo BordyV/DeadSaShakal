@@ -67,42 +67,40 @@ class Bullet {
               this.angle *= -1;
             }
   }
-
-  // testerCollisionTri(murTri) {
-  //   if (((this.x < 0
-  //        && this.x >this.width)) ) {
-  //         if (((this.y < Math.floor(murTri.y) + Math.floor(murTri.height)
-  //           && this.y > murTri.y)))
-  //           {
-  //          return true;
+  testerCollisionDes(mur) {
+    if (((this.x < Math.floor(mur.x) + Math.floor(mur.width)
+         && this.x > mur.x)) ) {
+          if (((this.y < Math.floor(mur.y) + Math.floor(mur.height)
+            && this.y > mur.y)))
+            {
+           return true;
               
-  //         }
-  //   } 
-  //     return false;
-  // }
+          }
+    } 
+      return false;
+  }
+  GetMurCollisionDes(murDes){
 
-  GetMurTriCollision(murTri){
-
-    if(murTri.x - Math.abs(this.dx) < this.x && murTri.x +Math.abs(this.dx) > this.x )
+    if(murDes.x - Math.abs(this.dx) < this.x && murDes.x +Math.abs(this.dx) > this.x )
             {//left
               this.nbRebond -= 1;
               this.dx *= -1;
               this.angle *= -1;
             }
-            if(murTri.y - Math.abs(this.dy) < this.y && murTri.y +Math.abs(this.dy) > this.y )
+            if(murDes.y - Math.abs(this.dy) < this.y && murDes.y +Math.abs(this.dy) > this.y )
             {//top
               this.nbRebond -= 1;
               this.dy *= -1;
               this.angle *= -1;
             }
 
-            if(Math.floor(murTri.x) + Math.floor(murTri.width)  - Math.abs(this.dx) < this.x && (Math.floor(murTri.x) + Math.floor(murTri.width) +Math.abs(this.dx) > this.x ))
+            if(Math.floor(murDes.x) + Math.floor(murDes.width)  - Math.abs(this.dx) < this.x && (Math.floor(murDes.x) + Math.floor(murDes.width) +Math.abs(this.dx) > this.x ))
             {//right
               this.nbRebond -= 1;
               this.dx *= -1;
               this.angle *= -1;
             }
-            if(Math.floor(murTri.y) + Math.floor(murTri.height) - Math.abs(this.dy) < this.y &&  (Math.floor(murTri.y) + Math.floor(murTri.height) +Math.abs(this.dy) > this.y ))
+            if(Math.floor(murDes.y) + Math.floor(murDes.height) - Math.abs(this.dy) < this.y &&  (Math.floor(murDes.y) + Math.floor(murDes.height) +Math.abs(this.dy) > this.y ))
             {//bottom
               this.nbRebond -= 1;
               this.dy *= -1;
@@ -123,11 +121,12 @@ class Bullet {
 
             });
 
-            mapActuelle.lesMursTri.forEach(mt => {
+            mapActuelle.lesMursDestroy.forEach(md => {
 
-                if(this.testerCollision(mt))
+                if(this.testerCollisionDes(md))
                 {
-                    this.GetMurTriCollision(mt);
+                    this.GetMurCollisionDes(md);
+                    md.detruit();
                 }
 
             });

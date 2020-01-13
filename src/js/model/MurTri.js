@@ -11,7 +11,7 @@ class MurTri extends Object {
       this.p1;
       this.p2;
       this.p3;
-      if(this.id == 201)
+      if(this.id == 301)
       {
       this.image = document.getElementById("angle1");
       }
@@ -28,7 +28,7 @@ class MurTri extends Object {
       }
 
 
-      if(this.id == 201)
+      if(this.id == 301)
       {
         this.p1 = [0, this.height];
         this.p2 = [this.width, this.height];
