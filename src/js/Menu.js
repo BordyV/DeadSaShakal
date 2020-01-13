@@ -130,8 +130,8 @@ btnEditeur = {};
                     ctx = canvas.getContext('2d');
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     boutons = [];
-                    mapActuelle = new Map(110);
-                    mapname = 110;
+                    mapActuelle = new Map(map10);
+                    mapname = map10;
                     anime();
                 }
                 if (b.id == 111) {
@@ -139,8 +139,8 @@ btnEditeur = {};
                     ctx = canvas.getContext('2d');
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     boutons = [];
-                    mapActuelle = new Map(111);
-                    mapname = 111;
+                    mapActuelle = new Map(map11);
+                    mapname = map11;
                     anime();
                 }
                 }
