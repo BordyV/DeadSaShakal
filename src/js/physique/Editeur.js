@@ -134,7 +134,7 @@ function inita() {
             objetSelectione = 2;
             //   console.log("Oui"+evt.keyCode);
         }
-        if (evt.keyCode === 88) {
+        if (evt.keyCode === 83) {
             download(JSON.stringify(mapTemp), 'map.json', 'text/plain');
         }
 
