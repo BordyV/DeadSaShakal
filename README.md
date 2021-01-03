@@ -24,7 +24,7 @@ Clique gauche sur un objet placé pour le sélectionner.<br>
 Pour modifier la taille de l'objet sélectionné utiliser le slider de droite pour la hauteur, le slider du bas pour la largeur.<br>
 Pour déplacer un objet déjà placé: Le sélectionner puis cliquer dessus sans relacher le clique et le déplacer avec la souris.<br>
 
-Pour sauvegarder le niveau créé il faut utiliser la touche W. et pour la charger la touche X.<br><br><br>
+Pour sauvegarder le niveau créé il faut utiliser la touche S. et pour la charger la touche W.<br><br><br>
 Amélioration pour la prochaine version:<br>
 Bouton pour sauvegarder la map et charger la map de son choix.<br><br>
 Physique: correction des hitboxs.
