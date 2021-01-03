@@ -121,8 +121,8 @@ btnEditeur = {};
                     ctx = canvas.getContext('2d');
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     boutons = [];
-                    mapActuelle = new Map(mapdemo);
-                    mapname = mapdemo;
+                    mapActuelle = new Map(map9);
+                    mapname = map9;
                     anime();
                 }
                 if (b.id == 110) {
@@ -141,6 +141,123 @@ btnEditeur = {};
                     boutons = [];
                     mapActuelle = new Map(map11);
                     mapname = map11;
+                    anime();
+                }
+                if (b.id == 112) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map12);
+                    mapname = map12;
+                    anime();
+                }
+                if (b.id == 113) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map13);
+                    mapname = map13;
+                    anime();
+                }
+                if (b.id == 114) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map14);
+                    mapname = map14;
+                    anime();
+                }
+                if (b.id == 115) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map15);
+                    mapname = map15;
+                    anime();
+                }
+                if (b.id == 116) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map16);
+                    mapname = map16;
+                    anime();
+                }
+                if (b.id == 117) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map17);
+                    mapname = map17;
+                    anime();
+                }
+                if (b.id == 118) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map18);
+                    mapname = map18;
+                    anime();
+                }
+                if (b.id == 119) {
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map19);
+                    mapname = map19;
+                    anime();
+                }
+                if (b.id == 120) { 
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map20);
+                    mapname = map20;
+                    anime();
+                }
+                if (b.id == 121) { 
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map21);
+                    mapname = map21;
+                    anime();
+                }
+                if (b.id == 122) { 
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map22);
+                    mapname = map22;
+                    anime();
+                }
+                if (b.id == 123) { 
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map23);
+                    mapname = map23;
+                    anime();
+                }
+                if (b.id == 124) { 
+
+                    ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    boutons = [];
+                    mapActuelle = new Map(map24);
+                    mapname = map24;
                     anime();
                 }
                 }
@@ -197,6 +314,20 @@ function MenuJouer() {
     let niveau9 = {x: 20, y: 300 ,w:100,h:100,id:109};
     let niveau10 = {x: 170, y: 300 ,w:100,h:100,id:110};
     let niveau11 = {x: 320, y: 300 ,w:100,h:100,id:111};
+    let niveau12 = {x: 470, y: 300 ,w:100,h:100,id:112};
+    let niveau13 = {x: 620, y: 300 ,w:100,h:100,id:113};
+    let niveau14 = {x: 770, y: 300 ,w:100,h:100,id:114};
+    let niveau15 = {x: 920, y: 300 ,w:100,h:100,id:115};
+    let niveau16 = {x: 1070, y: 300 ,w:100,h:100,id:116};
+    let niveau17 = {x: 20, y: 500 ,w:100,h:100,id:117};
+    let niveau18 = {x: 170, y: 500 ,w:100,h:100,id:118};
+    let niveau19 = {x: 320, y: 500 ,w:100,h:100,id:119};
+    let niveau20 = {x: 470, y: 500 ,w:100,h:100,id:120};
+    let niveau21 = {x: 620, y: 500 ,w:100,h:100,id:121};
+    let niveau22 = {x: 770, y: 500 ,w:100,h:100,id:122};
+    let niveau23 = {x: 920, y: 500 ,w:100,h:100,id:123};
+    let niveau24 = {x: 1070, y: 500 ,w:100,h:100,id:124};
+    
     ctx.save();
     ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -213,6 +344,19 @@ function MenuJouer() {
     boutons.push(niveau9);
     boutons.push(niveau10);
     boutons.push(niveau11);
+    boutons.push(niveau12);
+    boutons.push(niveau13);
+    boutons.push(niveau14);
+    boutons.push(niveau15);
+    boutons.push(niveau16);
+    boutons.push(niveau17);
+    boutons.push(niveau18);
+    boutons.push(niveau19);
+    boutons.push(niveau20);
+    boutons.push(niveau21);
+    boutons.push(niveau22);
+    boutons.push(niveau23);
+    boutons.push(niveau24);
 
     ctx.fillStyle = '#00001a';
     ctx.globalAlpha = 0.6;
@@ -224,6 +368,7 @@ function MenuJouer() {
     ctx.fillRect(770,100,100,100);
     ctx.fillRect(920,100,100,100);
     ctx.fillRect(1070,100,100,100);
+
     ctx.fillRect(20,300,100,100);
     ctx.fillRect(170,300,100,100);
     ctx.fillRect(320,300,100,100);
@@ -252,14 +397,22 @@ function MenuJouer() {
     ctx.fillText("6", 805, 170);
     ctx.fillText("7", 955, 170);
     ctx.fillText("8", 1105, 170);
-     ctx.fillText("demo", 0, 370);
-     ctx.fillText("10", 205-10, 370);
-     ctx.fillText("11", 355-10, 370);
-    // ctx.fillText("12", 505-10, 370);
-    // ctx.fillText("13", 655-10, 370);
-    // ctx.fillText("14", 805-10, 370);
-    // ctx.fillText("15", 955-10, 370);
-    //ctx.fillText("DEMO", 1105, 370);
+    ctx.fillText("9", 55, 370);
+    ctx.fillText("10", 205-14, 370);
+    ctx.fillText("11", 355-14, 370);
+    ctx.fillText("12", 505-14, 370);
+    ctx.fillText("13", 655-14, 370);
+    ctx.fillText("14", 805-14, 370);
+    ctx.fillText("15", 955-14, 370);
+    ctx.fillText("16", 1105-14, 370);
+    ctx.fillText("17", 55-14, 570);
+    ctx.fillText("18", 205-14, 570);
+    ctx.fillText("19", 355-14, 570);
+    ctx.fillText("20", 505-14, 570);
+    ctx.fillText("21", 655-14, 570);
+    ctx.fillText("22", 805-14, 570);
+    ctx.fillText("23", 955-14, 570);
+    ctx.fillText("24", 1105-14, 570);
     ctx.restore();
 
 
