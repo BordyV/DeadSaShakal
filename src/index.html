@@ -62,6 +62,45 @@
    background: #4CAF50;
    cursor: pointer;
  }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 1000px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 </style>
 
 
@@ -83,6 +122,9 @@
 <script src="js/model/Mur.js"></script>
 <script src="js/model/MurDestroy.js"></script>
 <script src="js/model/MurTri.js"></script>
+
+
+  
 
 
   <!-- editeur -->
@@ -194,5 +236,76 @@ Voici une liste des actions réalisables avec l'éditeur de niveau: <br><br>
   <input type="range" min="1" max="1300" value="50" class="sliderX" id="sliderX">
 </div>
 </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Oops il semblerait que votre navigateur n'utilise pas chromium ! <br>
+    Pour une utilisation optimale il est conseillé d'utiliser Chrome ou un navigateur utilisant chromium.
+  <br>Voici un exemple de à quoi devrait ressembler le jeu :<br>
+  <img id="demoJeu" width="1000" src="img/DemoJeu.gif">
+ </p>
+  </div>
+
+</div>
+
+
+<script>
+  window.onloadend = loadModal();
+  
+  function loadModal() {
+    // Get the modal
+    var modal = document.getElementById("myModal");
+  
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    function openModal() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+  
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  
+    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
+      {
+        openModal();
+      }
+      else if(navigator.userAgent.indexOf("Chrome") != -1 )
+      {
+      }
+      else if(navigator.userAgent.indexOf("Safari") != -1)
+      {
+        openModal();
+      }
+      else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+      {
+        openModal();
+      }
+      else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+      {
+        openModal();
+      }  
+      else 
+      {
+        openModal();
+      }
+  
+  }
+    </script>
 </body>
 </html>
